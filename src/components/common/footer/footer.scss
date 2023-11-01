@@ -1,0 +1,83 @@
+footer{
+    background-color: gray;
+    
+    color: white;
+    justify-content: center;
+        align-items: center center;
+
+        .left-side{
+            padding: 2rem 1rem 1rem 1rem;
+            img{
+                width: 200px;
+                display: inline-flex;
+                padding: 0;
+            }
+
+            .quickLink{
+                padding: 0;
+                display: inline-flex;
+                gap: 2rem;
+                justify-content: center;
+                align-items: center center;
+                text-align: center;
+
+                @media (max-width:720px) {
+                    span{
+                        display: none;
+                    }
+                }
+        
+            }
+
+        }
+
+        .bottom{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            background-color: rgb(48, 48, 48);
+        
+
+            p{
+                
+              margin-bottom: 0;  
+                font-size: 0.7rem;
+            }
+        }
+
+    
+
+    .up{
+    
+        .orta-menu{
+            ul{
+                list-style-type: none;
+
+                li{
+                    margin-bottom: 1rem;
+                    margin-top: 1rem;
+                }
+                
+            }
+
+            .privacy{
+                display: block;
+                justify-content: end;
+                
+            }
+        }
+                 }
+        
+       
+    
+    
+    .down{
+    
+        .visa{
+            font-size: 20px;
+        }
+    }
+}
+
+
