@@ -1,0 +1,29 @@
+.up{
+    background:gray;
+    display: flex;
+    
+    .ul-li{
+        list-style-type: none;
+        span{
+            color: white;
+        }
+        li{
+            line-height: 1.6rem;        }
+    }
+   .right-side{
+        justify-content:end ;
+        .quick-link{
+            justify-content:end ;
+
+            text-align:center;
+            display: flex;
+            gap: 20px;
+        }
+        .privacy{
+        
+            list-style-type: none;            
+            
+        }
+
+}
+}

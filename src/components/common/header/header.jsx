@@ -1,10 +1,13 @@
+import MenuBar from "./menu-bar/menu-bar";
+import TopBar from "./top-bar/top-bar";
 
 const Header = () => {
   return (
     <div>
-      header
+      <TopBar />
+      <MenuBar />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
