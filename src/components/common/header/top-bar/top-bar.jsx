@@ -1,10 +1,9 @@
-import { Button, Col, Container, InputGroup, Navbar, Row } from "react-bootstrap";
+import { Container, InputGroup, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BiSearchAlt2 } from "react-icons/bi";
-import { AiOutlineHeart } from "react-icons/ai";
-import { HiOutlineShoppingBag } from "react-icons/hi";
 import "./top-bar.scss"
-import { Component, useState } from "react";
+import { useState } from "react";
+import TopBarIcons from "./top-bar-icons/top-bar-icons";
 
 const TopBar = () => {
 
@@ -15,7 +14,7 @@ const TopBar = () => {
   }
 
   const handleSearch = () => {
-    // earchText 
+    // searchText 
   }
 
   return (
@@ -27,7 +26,8 @@ const TopBar = () => {
             <img src="/cookery-tech-logo.png" alt="" width={150} />
           </Link>
 
-          <InputGroup className="inputGroup">
+
+          <InputGroup className="inputGroup ">
             <input type="search"
               name=""
               id=""
@@ -42,10 +42,8 @@ const TopBar = () => {
             </button>
           </InputGroup>
 
-          <span className="topBarIcons">
-            <AiOutlineHeart size={30} />
-            <HiOutlineShoppingBag size={30} />
-          </span>
+          <TopBarIcons />
+
 
         </Container>
       </Navbar>
