@@ -4,4 +4,33 @@
 }
 .product-menu{
 background-color: chocolate;
+width: 200px;
+text-align: center;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    ul {
+       padding: 0;
+       margin: 0;
+       list-style-type: none;
+       background-color: #bdbcbc;
+       border: 1px solid #ccc;
+       width: 100%;
+       box-sizing: border-box;
+
+       li {
+         padding: 10px 20px;
+         cursor: pointer;
+         &:hover {
+           background-color: #ddd;
+         }
+
+       }
+
+    }
+
 }
