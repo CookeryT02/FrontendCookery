@@ -6,8 +6,8 @@ import { PiSquaresFourDuotone } from "react-icons/pi";
 import { SlEarphones } from "react-icons/sl";
 import { IoIosLogIn } from "react-icons/io";
 
-TfiMapAlt;
 const MenuBar = () => {
+
   return (
     <div className="bar-menu">
       <Navbar collapseOnSelect expand="lg" className="bg-warning p-0">
@@ -34,32 +34,33 @@ const MenuBar = () => {
                 </div>
                 
               </NavDropdown>
-              <Nav.Link href="#features">
+  
+              <Nav.Link href="/">
                 {" "}
                 <span>
                   <AiOutlineHome />
                 </span>{" "}
                 Home
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/about">
                 <span>
                   <AiOutlineExclamationCircle />
                 </span>{" "}
                 About
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/product-map">
                 <span>
                   <TfiMapAlt />
                 </span>{" "}
                 Product Map
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/portfolio">
                 <span>
                   <PiSquaresFourDuotone />
                 </span>{" "}
                 Portfolio
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/contact">
                 <span>
                   <SlEarphones />
                 </span>{" "}
@@ -67,7 +68,7 @@ const MenuBar = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link eventKey={2} href="/login">
                 <span>
                   <IoIosLogIn />
                 </span>
