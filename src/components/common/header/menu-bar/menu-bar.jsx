@@ -18,19 +18,21 @@ const MenuBar = () => {
               <NavDropdown
                 title="Products"
                 id="collapsible-nav-dropdown"
-                className="product-menu"
-              >
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
+                className="product-menu">
+
+                <div className="menu">
+                  <ul>
+                    <li>Equipment</li>
+                    <li>Cooking Equipment</li>
+                    <li>Transport Equipment</li>
+                    <li>Serving Equipment</li>
+                    <li>Cooling Equipment</li>
+                    <li>Dishwashing Equipment</li>
+                    <li>Cafe and Bar Equipment</li>
+                    <li>Sinks and Countertops</li>
+                  </ul>
+                </div>
+                
               </NavDropdown>
               <Nav.Link href="#features">
                 {" "}
