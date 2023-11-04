@@ -1,0 +1,63 @@
+.tbContainer {
+
+    padding: 0.5rem;
+
+    @media (max-width: 576px) {
+        img {
+            width: 75px;
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 767px) {
+        img {
+            width: 100px;
+        }
+    }
+
+    .inputGroup {
+
+        justify-content: center;
+        display: flex;
+        height: 1.5rem;
+        align-items: center;
+
+
+
+
+
+        input {
+            background-color: rgb(197, 197, 197);
+            border-radius: 2px;
+            border: none;
+            width: 50%;
+            outline: none;
+            padding: 2px 5px;
+            color: black;
+
+        }
+
+        @media (max-width: 576px) {
+            input {
+                width: 75%;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 767px) {
+            input {
+                width: 70%;
+            }
+        }
+
+        .searchButton {
+            border: none;
+            background-color: rgb(214, 214, 0);
+            color: rgb(65, 65, 65);
+            border-radius: 3px;
+            padding: 2px 4px;
+
+        }
+
+
+
+    }
+}
