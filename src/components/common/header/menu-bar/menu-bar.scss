@@ -5,10 +5,12 @@
 .product-menu{
 background-color: chocolate;
 }
+
 .menu {
     position: relative;
     display: inline-block;
     width: 100%;
+
     ul {
        padding: 0;
        margin: 0;
@@ -17,6 +19,7 @@ background-color: chocolate;
        border: 1px solid #ccc;
        width: 100%;
        box-sizing: border-box;
+
        li {
          padding: 10px 20px;
          border-bottom: 1px solid #ccc;
@@ -24,6 +27,9 @@ background-color: chocolate;
          &:hover {
            background-color: #ddd;
          }
+
        }
+
     }
-   }
+
+}
