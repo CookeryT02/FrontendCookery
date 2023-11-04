@@ -1,4 +1,3 @@
-import HomeCarousel from "../carousel/carousel";
 import MenuBar from "./menu-bar/menu-bar";
 import TopBar from "./top-bar/top-bar";
 
@@ -7,7 +6,6 @@ const Header = () => {
     <div>
       <TopBar/>
       <MenuBar/>
-      <HomeCarousel/>
     </div>
   )
 };
