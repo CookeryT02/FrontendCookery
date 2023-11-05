@@ -6,8 +6,8 @@ import { PiSquaresFourDuotone } from "react-icons/pi";
 import { SlEarphones } from "react-icons/sl";
 import { IoIosLogIn } from "react-icons/io";
 
-TfiMapAlt;
 const MenuBar = () => {
+
   return (
     <div className="bar-menu">
       <Navbar collapseOnSelect expand="lg" className="bg-warning p-0">
@@ -18,46 +18,49 @@ const MenuBar = () => {
               <NavDropdown
                 title="Products"
                 id="collapsible-nav-dropdown"
-                className="product-menu"
-              >
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
+                className="product-menu">
+
+                <div className="menu">
+                  <ul>
+                    <li>Equipment</li>
+                    <li>Cooking Equipment</li>
+                    <li>Transport Equipment</li>
+                    <li>Serving Equipment</li>
+                    <li>Cooling Equipment</li>
+                    <li>Dishwashing Equipment</li>
+                    <li>Cafe and Bar Equipment</li>
+                    <li>Sinks and Countertops</li>
+                  </ul>
+                </div>
+                
               </NavDropdown>
-              <Nav.Link href="#features">
+  
+              <Nav.Link href="/">
                 {" "}
                 <span>
                   <AiOutlineHome />
                 </span>{" "}
                 Home
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/about">
                 <span>
                   <AiOutlineExclamationCircle />
                 </span>{" "}
                 About
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/product-map">
                 <span>
                   <TfiMapAlt />
                 </span>{" "}
                 Product Map
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/portfolio">
                 <span>
                   <PiSquaresFourDuotone />
                 </span>{" "}
                 Portfolio
               </Nav.Link>
-              <Nav.Link href="#pricing">
+              <Nav.Link href="/contact">
                 <span>
                   <SlEarphones />
                 </span>{" "}
@@ -65,7 +68,7 @@ const MenuBar = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link eventKey={2} href="/login">
                 <span>
                   <IoIosLogIn />
                 </span>
