@@ -11,7 +11,7 @@ const TopBarIcons = () => {
     return (
         <span className="icons">
             {
-                !isLoggedIn ? (
+                isLoggedIn ? (
                     <>
 
                         <button className="icon">

@@ -21,10 +21,6 @@
         height: 1.5rem;
         align-items: center;
 
-
-
-
-
         input {
             background-color: rgb(197, 197, 197);
             border-radius: 2px;
@@ -42,11 +38,13 @@
             }
         }
 
+
         @media (min-width: 576px) and (max-width: 767px) {
             input {
                 width: 70%;
             }
         }
+
 
         .searchButton {
             border: none;
@@ -60,4 +58,13 @@
 
 
     }
+
+    @media (max-width: 264px) {
+        .inputGroup {
+            display: none;
+        }
+    }
+
+
+
 }
