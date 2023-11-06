@@ -1,7 +1,16 @@
-const Spacer = () => {
+import React from 'react';
+
+const Spacer = (props) => {
+  const { width, height } = props;
+
+  const spacerStyle = {
+    width: width ? width : '100vh',
+    height: height ? height : '3rem'
+  };
+
   return (
-    <div>Spacer</div>
-  )
+    <div style={spacerStyle}></div>
+  );
 };
 
 export default Spacer;

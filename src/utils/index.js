@@ -2,6 +2,9 @@
 
 
 //INITIAL VALUES
+import {
+    contactFormInitialValues
+} from "./initial-values/initial-values"
 
 
 
@@ -12,10 +15,17 @@
 //VALIDATIONS
 
 
+import {
+    contactFormValidations
+} from "./validations/validations"
+
+
 
 export const utils = {
     functions: {},
-    initialValues: {},
+    initialValues: {
+        contactFormInitialValues
+    },
     tables: {},
-    validations: {},
+    validations: { contactFormValidations },
 }

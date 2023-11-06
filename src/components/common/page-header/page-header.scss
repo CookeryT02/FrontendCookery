@@ -1,8 +1,11 @@
 .page-header {
-    background-image: url("/public/img/chef-banner-four.jpg");
+    background-image: url("/public/img/Restaurants2.jpg");
     height: 300px;
-    padding-bottom: 2rem;
     position: relative;
+    background-size: cover;
+    /* Resmi kaplama modunda kullanabilirsiniz */
+    background-position: center bottom;
+    /* Alt kısmı hedefle */
     z-index: 0;
 
     // tozlu filigran
@@ -10,7 +13,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        opacity: 0.5;
+        opacity: 0.4;
         z-index: 10;
         background-color: rgb(13, 139, 61);
 
@@ -18,13 +21,14 @@
 
     h1 {
         position: relative;
-        z-index: 2;
+        z-index: 11;
         font-size: 4rem;
         font-weight: 700;
         text-transform: uppercase;
         justify-content: center;
         text-align: center;
         padding-top: 100px;
+        color: rgba(255, 255, 255, 0.856);
 
     }
 }
