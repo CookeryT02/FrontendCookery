@@ -1,0 +1,31 @@
+@use "../../../../styles/variables" as v;
+@use "../../../../styles/mixins.scss" as m;
+
+
+.contact-info {
+
+    @include m.reset-list;
+    width: 90%;
+
+    .icons {
+        svg {
+            font-size: x-large;
+            margin-right: 0.5rem;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid v.$color1_2;
+        }
+
+        line-height: 4rem;
+    }
+
+    a {
+        color: v.$color1_1;
+        font-weight: 500;
+
+        &:hover {
+            color: v.$color1
+        }
+    }
+}

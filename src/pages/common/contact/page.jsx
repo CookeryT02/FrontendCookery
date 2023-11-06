@@ -3,8 +3,8 @@ import PageHeader from "../../../components/common/page-header/page-header";
 import Spacer from "../../../components/common/spacer/spacer";
 import ContactInfo from "../../../components/common/contact/info/info";
 import ContactForm from "../../../components/common/contact/form/form";
-import ContactMap from "./map/map";
-import "./page.scss";
+import ContactMap from "../../../components/common/contact/map/map";
+
 
 const ContactPage = () => {
   return (

@@ -36,7 +36,7 @@ const TopBar = () => {
             <button className="searchButton" disabled={!searchText} onClick={handleSearch} >
               <BiSearchAlt2
                 className="searchIcon"
-                size={20}
+                size={19}
 
               />
             </button>
