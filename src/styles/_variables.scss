@@ -1,0 +1,36 @@
+//COLOR PALETTES
+
+//COLOR1
+$color1: rgb(60, 60, 60);
+$color1_1: rgb(90,90,90);
+$color1_2: rgb(185, 185, 185);
+
+
+
+//COLOR2
+$color2: #ebd834;
+$color2_1: #756b0f;
+$color2_2: #f2db0a;
+
+
+//COLOR3
+$color3: #0aeaf2;
+$color3_1: #12868a;
+$color3_2: #186669;
+
+
+
+
+/* BOOTSTRAP */
+$primary: $color1;
+$secondary: $color2;
+$success: $color3;
+$info: $color4;
+$font-family-sans-serif: "Poppins";
+$navbar-light-color: $color1;
+$navbar-light-hover-color: $color2;
+$navbar-light-active-color: $color2;
+$nav-link-font-weight: 600;
+$border-radius: 5px;
+$form-feedback-valid-color: $color1;
+$nav-tabs-link-active-color: $color2;
