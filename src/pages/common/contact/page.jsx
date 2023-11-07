@@ -28,7 +28,7 @@ const ContactPage = () => {
         </Row>
       </Container>
 
-      <Spacer />
+      <Spacer height="8rem" />
 
     </>
   )

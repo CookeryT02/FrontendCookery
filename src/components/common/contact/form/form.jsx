@@ -3,31 +3,31 @@ import { useState } from "react";
 import { utils } from "../../../../utils";
 import { Button, Form, Spinner } from "react-bootstrap";
 import CustomForm from "../../custom-form/custom-form";
+import "./form.scss"
 
 
 const formArray = [
   {
     name: "name",
-    label: "Name"
+    placeholder: "Name"
   },
   {
     name: "company",
-    label: "Company"
+    placeholder: "Company"
   },
   {
     name: "email",
-    label: "Email",
+    placeholder: "Email",
     type: "email"
   },
   {
     name: "phone",
-    label: "Phone",
-    type: "phone"
+    placeholder: "Phone",
   },
   {
     name: "message",
-    label: "Message",
-    type: "text",
+    placeholder: "Your Message",
+    type: "textarea",
     rows: 3
   }
 ]
@@ -57,13 +57,13 @@ const ContactForm = () => {
     <Form noValidate onSubmit={formik.handleSubmit} className="contact-form">
       {
         formArray.map((item) => (
-          <CustomForm key={item.name} formik={formik} {...item} />
+          <CustomForm className="form-element" key={item.name} formik={formik} {...item} />
         ))
       }
 
-      <Button type="submit" disabled={!(formik.dirty && formik.isValid) || loading} className="w-100">
+      <Button type="submit" disabled={!(formik.dirty && formik.isValid) || loading} className="send-btn">
         {loading && <Spinner animation="border" size="sm" />}
-        Send
+        SEND
       </Button>
     </Form>
   )
