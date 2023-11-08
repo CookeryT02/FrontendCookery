@@ -1,3 +1,6 @@
+@use "../../../../styles/variables" as v;
+@use "../../../../styles/mixins.scss" as m;
+
 .tbContainer {
 
     padding: 0.5rem;
@@ -18,17 +21,17 @@
 
         justify-content: center;
         display: flex;
-        height: 1.5rem;
         align-items: center;
 
+
         input {
-            background-color: rgb(197, 197, 197);
+            background-color: v.$color1_2;
             border-radius: 2px;
             border: none;
             width: 50%;
             outline: none;
             padding: 2px 5px;
-            color: black;
+            color: v.$color1;
 
         }
 
@@ -48,8 +51,8 @@
 
         .searchButton {
             border: none;
-            background-color: rgb(214, 214, 0);
-            color: rgb(65, 65, 65);
+            background-color: v.$color2;
+            color: v.$color1;
             border-radius: 3px;
             padding: 2px 4px;
 

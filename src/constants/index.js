@@ -130,6 +130,7 @@ const website = {
     address: "328 E Stroop Rd, Kettering, Ohio, USA",
     phone: "(937) 294-5411",
     email: "info@cookerytech.com",
+    mapUrl: "https://maps.app.goo.gl/q5vtAxPw7pgDbAbF8"
 }
 
 

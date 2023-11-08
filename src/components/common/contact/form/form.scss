@@ -1,0 +1,35 @@
+@use "../../../../styles/variables" as v;
+@use "../../../../styles/mixins.scss" as m;
+
+.contact-form {
+
+    .form-control {
+        border: none;
+        background-color: rgb(228, 228, 228);
+        border-radius: 2px;
+        margin: -10px 0;
+
+
+        &:focus {
+            background-color: rgb(238, 238, 238);
+            outline: none !important;
+            border: 1px solid rgb(211, 211, 211);
+        }
+    }
+
+    .send-btn {
+        background-color: v.$color2_2 !important;
+        color: black !important;
+        font-weight: 500;
+        border-radius: 2px;
+        width: 60%;
+        border: none;
+        display: block;
+        margin: 1.6rem auto 0;
+        text-align: center;
+
+        &:hover {
+            background-color: v.$color2 !important;
+        }
+    }
+}
