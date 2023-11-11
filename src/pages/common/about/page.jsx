@@ -10,6 +10,7 @@ const AboutPage = () => {
       <Spacer />
       <BannerHead />
       <WhatWeDo />
+      <Spacer />
     </div>
   );
 };
