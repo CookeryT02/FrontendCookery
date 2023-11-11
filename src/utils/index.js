@@ -1,9 +1,9 @@
 //FUNCTIONS
-
+import { validCheck } from "./functions/functions";
 
 //INITIAL VALUES
 import {
-    contactFormInitialValues
+    contactFormInitialValues, loginFormInitialValues
 } from "./initial-values/initial-values"
 
 
@@ -16,16 +16,16 @@ import {
 
 
 import {
-    contactFormValidations
+    contactFormValidationSchema, loginFormValidationSchema
 } from "./validations/validations"
 
 
 
 export const utils = {
-    functions: {},
+    functions: { validCheck },
     initialValues: {
-        contactFormInitialValues
+        contactFormInitialValues, loginFormInitialValues
     },
     tables: {},
-    validations: { contactFormValidations },
+    validations: { contactFormValidationSchema, loginFormValidationSchema },
 }

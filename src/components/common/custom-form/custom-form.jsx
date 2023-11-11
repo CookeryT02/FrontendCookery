@@ -2,6 +2,7 @@ import ReactInputMask from "react-input-mask-next";
 import { FloatingLabel, Form } from "react-bootstrap";
 import { utils } from "../../../utils";
 
+
 const CustomForm = (props) => {
     const {
         asGroup,
@@ -60,11 +61,12 @@ const CustomForm = (props) => {
                     </Form.Control.Feedback>
                 </FloatingLabel>
             ) : (
-                <Form.Group as={asGroup} className="mb-3">
+                <Form.Group as={asGroup} className="mb-3" >
                     <Form.Label>{label}</Form.Label>
-                    <Form.Control {...properties} />
-                    <Form.Control.Feedback type="invalid">
-                        {formik.errors[name]}
+                    <Form.Control {...properties}
+                        isInvalid={formik.touched[name] && formik.errors[name]} />
+                    <Form.Control.Feedback type="invalid" className="mt-2">
+                        {formik.touched[name] && formik.errors[name]}
                     </Form.Control.Feedback>
                 </Form.Group>
             );

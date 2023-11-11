@@ -52,6 +52,10 @@ const router = createBrowserRouter([
                 element: <AboutPage />
             },
             {
+                path: "login",
+                element: <LoginPage />
+            },
+            {
                 path: "categories",
                 element: <CategoriesPage />
             },

@@ -7,6 +7,8 @@ export const loginFormValidationSchema = Yup.object({
         .required("Please enter your email address"),
     password: Yup.string()
         .required("Please enter your password")
+        .min(8, "Password must be at least 8 characters")
+        .max(50, "Password must be at most 50 characters")
 });
 
 // REGISTER FORM
@@ -50,25 +52,24 @@ export const registerFormValidationSchema = Yup.object({
 
 
 // CONTACT FORM
-export const contactFormValidations = Yup.object({
+export const contactFormValidationSchema = Yup.object({
     name: Yup.string()
         .min(2, "Name must be at least 2 characters")
         .max(50, "Name must be at most 50 characters")
         .required("Please enter your name"),
     company: Yup.string()
-        .min(2, "Subject must be at least 2 characters")
-        .max(50, "Subject must be at most 50 characters")
+        .min(2, "Company name must be at least 2 characters")
+        .max(50, "Company name must be at most 50 characters")
         .required("Please enter your company name"),
     email: Yup.string()
         .email("Invalid email address")
         .required("Please enter your email address"),
     phone: Yup.string()
-        .matches(/^[\d\s()/-]+$/, "There are invalid characters in your phone number")
-        .min(14, "Phone number must be at least 14 digits")
-        .max(14, "Phone number must be at most 14 digits")
+        .min(13, "Phone number must be at least 13 digits")
+        .max(13, "Phone number must be at most 13 digits")
         .required("Please enter your phone number"),
-    body: Yup.string()
-        .min(10, "Body must be at least 10 characters")
-        .max(200, "Body must be at most 200 characters")
-        .required("Please enter your body"),
+    message: Yup.string()
+        .min(10, "Message must be at least 10 characters")
+        .max(200, "Message must be at most 200 characters")
+        .required("Please enter your message"),
 });
