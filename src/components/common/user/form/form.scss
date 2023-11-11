@@ -1,0 +1,17 @@
+@use "../../../../styles/variables" as v;
+
+
+.icon {
+    background-color: v.$color1_2 !important;
+    border-radius: 0 !important;
+}
+
+.icon::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    margin-left: 0.5rem;
+    margin-right: -0.5rem;
+}
