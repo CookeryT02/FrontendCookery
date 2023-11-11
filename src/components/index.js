@@ -34,7 +34,7 @@ import FeaturedProducts from "./common/product/featured-products/featured-produc
 import ProductMap from "./common/product/map/map";
 import Product from "./common/product/product";
 import HomeCarousel from "./common/carousel/carousel";
-
+import Portfolio from "./common/portfolio/portfolio";
 
 export {
     //ADMIN COMPONENTS
@@ -73,5 +73,5 @@ export {
     ProductMap,
     Product,
     HomeCarousel,
-
+    Portfolio
 }

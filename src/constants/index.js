@@ -25,6 +25,48 @@ const roles = [
         value: "Sales Specialist",
     }
 ];
+const portfolio = [
+    {
+        id: 1,
+        title: "The French Laundry",
+        city: "California",
+    },
+    {
+        id: 2,
+        title: "Per Se",
+        city: "New York",
+    },
+    {
+        id: 3,
+        title: "Alinea",
+        city: "Chicago",
+    },
+    {
+        id: 4,
+        title: "Eleven Madison Park",
+        city: "New York",
+    },
+    {
+        id: 5,
+        title: "Le Bernardi",
+        city: "New York",
+    },
+    {
+        id: 6,
+        title: "Momofuku Ko",
+        city: "New York",
+    },
+    {
+        id: 7,
+        title: "Atelier Cren",
+        city: "San Francisco",
+    },
+    {
+        id: 8,
+        title: "SingleThread",
+        city: "California",
+    }
+];
 
 const routes = {
     // ADMIN ROUTES
@@ -94,6 +136,7 @@ const website = {
 
 export const constants = {
     roles,
+    portfolio,
     routes,
     website,
 }
