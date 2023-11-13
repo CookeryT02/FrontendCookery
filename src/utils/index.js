@@ -3,7 +3,7 @@ import { validCheck } from "./functions/functions";
 
 //INITIAL VALUES
 import {
-    contactFormInitialValues, loginFormInitialValues
+    contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
 } from "./initial-values/initial-values"
 
 
@@ -16,7 +16,7 @@ import {
 
 
 import {
-    contactFormValidationSchema, loginFormValidationSchema
+    contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema
 } from "./validations/validations"
 
 
@@ -24,8 +24,8 @@ import {
 export const utils = {
     functions: { validCheck },
     initialValues: {
-        contactFormInitialValues, loginFormInitialValues
+        contactFormInitialValues, loginFormInitialValues, registerFormInitialValues,
     },
     tables: {},
-    validations: { contactFormValidationSchema, loginFormValidationSchema },
+    validations: { contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema  },
 }
