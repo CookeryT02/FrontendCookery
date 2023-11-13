@@ -14,11 +14,11 @@ const TopBarIcons = () => {
                 !isLoggedIn ? (
                     <>
 
-                        <button className="icon">
+                        <button className="topbar-icon">
                             <AiOutlineHeart size={30} />
                             <span className="ntf">3</span>
                         </button>
-                        <button className="icon">
+                        <button className="topbar-icon">
                             <HiOutlineShoppingBag size={30} />
                             <span className="ntf">1</span>
                         </button>

@@ -5,9 +5,7 @@ import { useFormik } from "formik";
 import { utils } from "../../../utils";
 import { useState } from "react";
 import { FaUsers } from "react-icons/fa"
-import { BiUser } from "react-icons/bi"
 import { PasswordInput, UserForm } from "../../../components";
-import { constants } from "../../../constants";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 
@@ -18,6 +16,7 @@ const RegisterPage = () => {
       name: "firstName",
       label: "First Name",
       placeholder: "Enter first name",
+      icon: <AiOutlineUser />
     },
     {
       name: "lastName",
@@ -116,14 +115,14 @@ const RegisterPage = () => {
       <Spacer />
       <Container>
         <Row>
-          <FaUsers size={200} className="user-icon" />
-          <Spacer height="2rem" />
+          <FaUsers size={200} className="user-icon mb-2rem" />
+
           <Col md={6} lg={5} xl={4} className="mx-auto">
             <Form noValidate onSubmit={formik.handleSubmit} className="login-form">
 
               {
                 formItems.map((item) => (
-                  <UserForm key={item.name} formik={formik}  {...item} icon={<AiOutlineUser />} />
+                  <UserForm key={item.name} formik={formik}  {...item} />
                 ))
               }
               <hr />
