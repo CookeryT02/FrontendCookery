@@ -1,9 +1,10 @@
 import { useFormik } from "formik";
-import { UserForm } from "../../../components";
+import { PageHeader, PasswordInput, Spacer, UserForm } from "../../../components";
 import { utils } from "../../../utils";
 import { useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { AiOutlineUser } from "react-icons/ai";
+import { FaUsers } from "react-icons/fa";
 
 const RegisterPage = () => {
 
@@ -37,22 +38,62 @@ const RegisterPage = () => {
   };
 
   const formik = useFormik({
-    initialValues: utils.initialValues.loginFormInitialValues,
-    validationSchema: utils.validations.loginFormValidationSchema,
+    //initialValues: utils.initialValues.loginFormInitialValues,
+    //validationSchema: utils.validations.loginFormValidationSchema,
     onSubmit,
   });
 
 
   return (
     <>
+      <PageHeader title="LOGIN" />
+      <Spacer />
       <Container>
-        <UserForm
-          formik={formik}
-          name="email"
-          placeholder="Email"
-          icon={<AiOutlineUser />}
-        />
-      </Container>
+        <Row>
+          <FaUsers size={200} className="user-icon" />
+          <Spacer height="2rem" />
+          <Col md={6} lg={5} xl={4} className="mx-auto">
+            <Form noValidate onSubmit={formik.handleSubmit} className="login-form">
+
+              <UserForm
+                formik={formik}
+                name="email"
+                placeholder="Email"
+                icon={<AiOutlineUser />}
+              />
+              <Spacer height="1.5rem" />
+
+              <UserForm
+                formik={formik}
+                name="name"
+                placeholder="Name"
+                icon={<AiOutlineUser />}
+              />
+
+              <PasswordInput
+                formik={formik}
+                name="password"
+                placeholder="Password"
+              />
+
+
+              <div className="d-flex justify-content-center">
+                <Button
+                  type="submit"
+                  disabled={!(formik.dirty && formik.isValid) || loading}
+                  className="login-btn">
+                  {loading && <Spinner animation="border" size="sm" />} REGISTER
+                </Button>
+              </div>
+              <Spacer height="1rem" />
+
+            </Form>
+          </Col>
+        </Row >
+
+      </Container >
+      <Spacer height="5rem" />
+
 
     </>
   )

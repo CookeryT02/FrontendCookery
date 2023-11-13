@@ -1,6 +1,7 @@
 import React from 'react'
 import "./form.scss"
 import { Form, InputGroup } from 'react-bootstrap';
+import { utils } from "../../../../utils";
 
 const UserForm = (props) => {
     const {
@@ -22,7 +23,7 @@ const UserForm = (props) => {
 
     let properties = {
         ...formik.getFieldProps(name),
-        //...utils.functions.validCheck(name, formik),
+        ...utils.functions.validCheck(name, formik),
         disabled,
     };
 
@@ -54,19 +55,18 @@ const UserForm = (props) => {
         case "email":
         case "textarea":
             return floating ? (
-                <FloatingLabel label={label} className="mb-3">
+                <FloatingLabel label={label} >
                     <Form.Control {...properties} />
                     <Form.Control.Feedback type="invalid">
                         {formik.errors[name]}
                     </Form.Control.Feedback>
                 </FloatingLabel>
             ) : (
-                <InputGroup as={asGroup} className="mb-3" >
+                <InputGroup as={asGroup} className="" >
                     <InputGroup.Text className='icon'>
                         {icon}
                     </InputGroup.Text>
-                    <Form.Control {...properties}
-                        isInvalid={formik.touched[name] && formik.errors[name]} />
+                    <Form.Control {...properties} />
                     <Form.Control.Feedback type="invalid" className="mt-2">
                         {formik.touched[name] && formik.errors[name]}
                     </Form.Control.Feedback>
@@ -74,7 +74,7 @@ const UserForm = (props) => {
             );
         case "select":
             return (
-                <Form.Group as={asGroup} className="mb-3">
+                <Form.Group as={asGroup} className="">
                     <Form.Label>{label}</Form.Label>
                     <Form.Select {...properties}>
                         {itemsArr.map((item) => (

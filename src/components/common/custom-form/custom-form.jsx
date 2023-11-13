@@ -22,7 +22,7 @@ const CustomForm = (props) => {
 
     let properties = {
         ...formik.getFieldProps(name),
-        //...utils.functions.validCheck(name, formik),
+        ...utils.functions.validCheck(name, formik),
         disabled,
     };
 
@@ -63,10 +63,9 @@ const CustomForm = (props) => {
             ) : (
                 <Form.Group as={asGroup} className="mb-3" >
                     <Form.Label>{label}</Form.Label>
-                    <Form.Control {...properties}
-                        isInvalid={formik.touched[name] && formik.errors[name]} />
+                    <Form.Control {...properties} />
                     <Form.Control.Feedback type="invalid" className="mt-2">
-                        {formik.touched[name] && formik.errors[name]}
+                        {formik.errors[name]}
                     </Form.Control.Feedback>
                 </Form.Group>
             );
