@@ -1,13 +1,77 @@
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import PageHeader from "../../../components/common/page-header/page-header";
 import Spacer from "../../../components/common/spacer/spacer";
 import { useFormik } from "formik";
 import { utils } from "../../../utils";
 import { useState } from "react";
 import { FaUsers } from "react-icons/fa"
-import { PasswordInput, UserForm } from "../../../components";
+import { BiUser } from "react-icons/bi"
+import { PasswordInput } from "../../../components";
+import { constants } from "../../../constants";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineUser } from "react-icons/ai";
+
+const {routes } = constants;
+
+const formItems = [
+  {
+      name: "firstName",
+      label: "First Name",
+      placeholder: "Enter first name",
+  },
+  {
+      name: "lastName",
+      label: "Last Name",
+      placeholder: "Enter last name",
+  },
+  {
+      name: "email",
+      label: "Email",
+      placeholder: "Enter email",
+      type: "email",
+  },
+  {
+      name: "phoneNumber",
+      label: "Phone Number",
+      placeholder: "Enter phone number",
+      asInput: "ReactInputMask",
+      mask: "(999) 999-9999",
+  },
+  {
+      name: "address",
+      label: "Address",
+      placeholder: "Enter address",
+  },
+  {
+      name: "city",
+      label: "City",
+      placeholder: "Enter city",
+  },
+  {
+      name: "country",
+      label: "Country",
+      placeholder: "Enter country",
+  },
+  {
+      name: "taxNumber",
+      label: "Tax number",
+      placeholder: "Enter tax number",
+  }
+
+];
+
+const passwordItems = [
+  {
+      name: "password",
+      label: "Password",
+      placeholder: "Enter password",
+  },
+  {
+      name: "confirmPassword",
+      label: "Confirm Password",
+      placeholder: "Confirm password",
+  },
+];
 
 const RegisterPage = () => {
 
@@ -74,29 +138,20 @@ const RegisterPage = () => {
 
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+ 
 
   const onSubmit = async (values) => {
     setLoading(true);
     try {
-      /*  // istegini endpointe gonder
-       const data = await services.user.login(values);
-       // token'i sifrelenmis localstorage'e kaydet
-       services.encryptedLocalStorage.setItem(
-           "pickanddrivetoken",
-           data.token
-       );
-       // token ile kullanici bilgilerini al
-       const responseUser = await services.user.getUser();
-       // kullanici bilgilerini merkezi state'e kaydet
-       dispatch(loginSuccess(responseUser));
-       utils.functions.swalToast(
-           "You have successfully logged in",
-           "success"
-       );
-       navigate(routes.home); */
+      await services.user.register(values);
+      utils.functions.swalToast(
+          "You have successfully registered!",
+          "success"
+      );
+      navigate(routes.login);
     } catch (error) {
-      /*  dispatch(loginFailure());
-       utils.functions.swalToast(error.response.data.message, "error"); */
+      console.log(error);
+            utils.functions.swalToast(error.response.data.message, "error");
     } finally {
       setLoading(false);
     }
@@ -107,7 +162,6 @@ const RegisterPage = () => {
     validationSchema: utils.validations.registerFormValidationSchema,
     onSubmit,
   });
-
 
   return (
     <>
@@ -171,3 +225,4 @@ const RegisterPage = () => {
 };
 
 export default RegisterPage;
+
