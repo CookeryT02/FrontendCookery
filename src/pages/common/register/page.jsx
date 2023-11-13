@@ -1,5 +1,4 @@
 import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
-import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import PageHeader from "../../../components/common/page-header/page-header";
 import Spacer from "../../../components/common/spacer/spacer";
 import { useFormik } from "formik";
@@ -9,72 +8,8 @@ import { FaUsers } from "react-icons/fa"
 import { BiUser } from "react-icons/bi"
 import { PasswordInput } from "../../../components";
 import { constants } from "../../../constants";
-import { BiUser } from "react-icons/bi"
-import { PasswordInput } from "../../../components";
-import { constants } from "../../../constants";
 import { useNavigate } from "react-router-dom";
 
-const {routes } = constants;
-
-const formItems = [
-  {
-      name: "firstName",
-      label: "First Name",
-      placeholder: "Enter first name",
-  },
-  {
-      name: "lastName",
-      label: "Last Name",
-      placeholder: "Enter last name",
-  },
-  {
-      name: "email",
-      label: "Email",
-      placeholder: "Enter email",
-      type: "email",
-  },
-  {
-      name: "phoneNumber",
-      label: "Phone Number",
-      placeholder: "Enter phone number",
-      asInput: "ReactInputMask",
-      mask: "(999) 999-9999",
-  },
-  {
-      name: "address",
-      label: "Address",
-      placeholder: "Enter address",
-  },
-  {
-      name: "city",
-      label: "City",
-      placeholder: "Enter city",
-  },
-  {
-      name: "country",
-      label: "Country",
-      placeholder: "Enter country",
-  },
-  {
-      name: "taxNumber",
-      label: "Tax number",
-      placeholder: "Enter tax number",
-  }
-
-];
-
-const passwordItems = [
-  {
-      name: "password",
-      label: "Password",
-      placeholder: "Enter password",
-  },
-  {
-      name: "confirmPassword",
-      label: "Confirm Password",
-      placeholder: "Confirm password",
-  },
-];
 
 const {routes } = constants;
 
