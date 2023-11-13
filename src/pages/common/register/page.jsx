@@ -1,14 +1,80 @@
+import { Button, Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import PageHeader from "../../../components/common/page-header/page-header";
+import Spacer from "../../../components/common/spacer/spacer";
 import { useFormik } from "formik";
-import { PageHeader, PasswordInput, Spacer, UserForm } from "../../../components";
 import { utils } from "../../../utils";
 import { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { FaUsers } from "react-icons/fa"
+import { BiUser } from "react-icons/bi"
+import { PasswordInput, UserForm } from "../../../components";
+import { constants } from "../../../constants";
+import { useNavigate } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
-import { FaUsers } from "react-icons/fa";
 
 const RegisterPage = () => {
 
+  const formItems = [
+    {
+      name: "firstName",
+      label: "First Name",
+      placeholder: "Enter first name",
+    },
+    {
+      name: "lastName",
+      label: "Last Name",
+      placeholder: "Enter last name",
+    },
+    {
+      name: "phoneNumber",
+      label: "Phone Number",
+      placeholder: "Enter phone number",
+      asInput: "ReactInputMask",
+      mask: "(999) 999-9999",
+    },
+    {
+      name: "address",
+      label: "Address",
+      placeholder: "Enter address",
+    },
+    {
+      name: "city",
+      label: "City",
+      placeholder: "Enter city",
+    },
+    {
+      name: "country",
+      label: "Country",
+      placeholder: "Enter country",
+    },
+    {
+      name: "taxNumber",
+      label: "Tax number",
+      placeholder: "Enter tax number",
+    }
+
+  ];
+
+  const passwordItems = [
+    {
+      name: "email",
+      label: "Email",
+      placeholder: "Enter email",
+      type: "email",
+    },
+    {
+      name: "password",
+      label: "Password",
+      placeholder: "Enter password",
+    },
+    {
+      name: "confirmPassword",
+      label: "Confirm Password",
+      placeholder: "Confirm password",
+    },
+  ];
+
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = async (values) => {
     setLoading(true);
@@ -38,15 +104,15 @@ const RegisterPage = () => {
   };
 
   const formik = useFormik({
-    //initialValues: utils.initialValues.loginFormInitialValues,
-    //validationSchema: utils.validations.loginFormValidationSchema,
+    initialValues: utils.initialValues.registerFormInitialValues,
+    validationSchema: utils.validations.registerFormValidationSchema,
     onSubmit,
   });
 
 
   return (
     <>
-      <PageHeader title="LOGIN" />
+      <PageHeader title="REGISTER" />
       <Spacer />
       <Container>
         <Row>
@@ -55,25 +121,31 @@ const RegisterPage = () => {
           <Col md={6} lg={5} xl={4} className="mx-auto">
             <Form noValidate onSubmit={formik.handleSubmit} className="login-form">
 
+              {
+                formItems.map((item) => (
+                  <UserForm key={item.name} formik={formik}  {...item} icon={<AiOutlineUser />} />
+                ))
+              }
+              <hr />
+
+
+
               <UserForm
                 formik={formik}
                 name="email"
                 placeholder="Email"
                 icon={<AiOutlineUser />}
               />
-              <Spacer height="1.5rem" />
-
-              <UserForm
-                formik={formik}
-                name="name"
-                placeholder="Name"
-                icon={<AiOutlineUser />}
-              />
 
               <PasswordInput
-                formik={formik}
-                name="password"
                 placeholder="Password"
+                name="password"
+                formik={formik}
+              />
+              <PasswordInput
+                placeholder="Confirm Password"
+                name="password"
+                formik={formik}
               />
 
 

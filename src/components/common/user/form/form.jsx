@@ -2,6 +2,7 @@ import React from 'react'
 import "./form.scss"
 import { Form, InputGroup } from 'react-bootstrap';
 import { utils } from "../../../../utils";
+import ReactInputMask from 'react-input-mask-next';
 
 const UserForm = (props) => {
     const {
@@ -62,7 +63,7 @@ const UserForm = (props) => {
                     </Form.Control.Feedback>
                 </FloatingLabel>
             ) : (
-                <InputGroup as={asGroup} className="" >
+                <InputGroup as={asGroup} className="mb-3" >
                     <InputGroup.Text className='icon'>
                         {icon}
                     </InputGroup.Text>

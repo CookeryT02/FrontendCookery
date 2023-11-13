@@ -5,7 +5,9 @@ const API_URL = "https://order-management-backend-v4-ae27edbd92c7.herokuapp.com"
 
 // COMMON ENDPOINTS
 export const login = async (payload) => {
+    { console.log(payload) }
     const response = await axios.post(`${API_URL}/login`, payload);
+    { console.log(payload) }
     return response.data;
 };
 export const register = async (payload) => {
