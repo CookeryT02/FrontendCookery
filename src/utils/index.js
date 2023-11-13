@@ -24,8 +24,8 @@ import {
 export const utils = {
     functions: { validCheck },
     initialValues: {
-        contactFormInitialValues, loginFormInitialValues, registerFormInitialValues,
+        contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
     },
     tables: {},
-    validations: { contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema  },
+    validations: { contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema },
 }
