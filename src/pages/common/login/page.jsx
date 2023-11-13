@@ -61,7 +61,7 @@ const LoginPage = () => {
       <Container>
         <Row>
           <FaUsers size={200} className="user-icon" />
-          <Spacer height="2rem" />
+
           <Col md={6} lg={5} xl={4} className="mx-auto">
             <Form noValidate onSubmit={formik.handleSubmit} className="login-form">
 
@@ -104,7 +104,7 @@ const LoginPage = () => {
         </Row >
 
       </Container >
-      <Spacer height="5rem" />
+      <Spacer height="4rem" />
 
     </>
   )
