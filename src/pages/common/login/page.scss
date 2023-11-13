@@ -3,6 +3,7 @@
 
 .user-icon {
     color: v.$color2;
+    margin-bottom: 2rem;
 }
 
 input {
@@ -21,7 +22,7 @@ input {
 }
 
 .lnk:hover {
-    color: v.$color1_1;
+    color: black;
 }
 
 .login-btn {
@@ -50,21 +51,4 @@ input {
     margin-top: -0.5rem;
 
 
-}
-
-
-.custom-icon2 {
-    background-color: v.$color1_2 !important;
-    border: 1px solid v.$color1_2 !important;
-    border-radius: 0 !important;
-}
-
-.custom-icon2::after {
-    content: "";
-    display: inline-block;
-    width: 1px;
-    height: 100%;
-    background-color: black;
-    margin-left: 0.5rem;
-    margin-right: -0.5rem;
 }

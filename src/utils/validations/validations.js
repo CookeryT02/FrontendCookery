@@ -44,9 +44,11 @@ export const registerFormValidationSchema = Yup.object({
         .min(5, "Address mustW be at least 5 characters")
         .max(50, "Address must be at most 50 characters")
         .required("Please enter your address"),
-    zipCode: Yup.string()
-        .min(4, "Zip code must be at least 4 digits")
-        .max(6, "Zip code must be at most 6 digits")
+    city: Yup.string()
+        .required("Please enter your zip code"),
+    country: Yup.string()
+        .required("Please enter your zip code"),
+    taxNumber: Yup.string()
         .required("Please enter your zip code"),
 });
 
