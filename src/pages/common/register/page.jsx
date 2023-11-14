@@ -6,8 +6,11 @@ import { utils } from "../../../utils";
 import { useState } from "react";
 import { FaUsers } from "react-icons/fa"
 import { PasswordInput, UserForm } from "../../../components";
-import { useNavigate } from "react-router-dom";
-import { AiOutlineUser } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineUser, AiOutlinePhone } from "react-icons/ai";
+import { CiLocationOn } from "react-icons/ci";
+import { TbReceiptTax } from "react-icons/tb"
+import { MdDateRange } from "react-icons/md"
 
 const RegisterPage = () => {
 
@@ -22,6 +25,15 @@ const RegisterPage = () => {
       name: "lastName",
       label: "Last Name",
       placeholder: "Enter last name",
+      icon: <AiOutlineUser />
+    },
+    {
+      name: "birthday",
+      label: "Birthday",
+      placeholder: "Enter birthday",
+      asInput: "ReactInputMask",
+      mask: "99/99/9999",
+      icon: <MdDateRange />
     },
     {
       name: "phoneNumber",
@@ -29,26 +41,31 @@ const RegisterPage = () => {
       placeholder: "Enter phone number",
       asInput: "ReactInputMask",
       mask: "(999) 999-9999",
+      icon: <AiOutlinePhone/>
     },
     {
       name: "address",
       label: "Address",
       placeholder: "Enter address",
+      icon: <CiLocationOn/>
     },
     {
       name: "city",
       label: "City",
       placeholder: "Enter city",
+      icon: <CiLocationOn/>
     },
     {
       name: "country",
       label: "Country",
       placeholder: "Enter country",
+      icon: <CiLocationOn/>
     },
     {
       name: "taxNumber",
       label: "Tax number",
       placeholder: "Enter tax number",
+      icon: <TbReceiptTax/>
     }
 
   ];
@@ -59,16 +76,17 @@ const RegisterPage = () => {
       label: "Email",
       placeholder: "Enter email",
       type: "email",
+      icon: <AiOutlineUser />,
     },
     {
       name: "password",
-      label: "Password",
       placeholder: "Enter password",
+      component: PasswordInput,
     },
     {
       name: "confirmPassword",
-      label: "Confirm Password",
       placeholder: "Confirm password",
+      component: PasswordInput,
     },
   ];
 
@@ -78,25 +96,16 @@ const RegisterPage = () => {
   const onSubmit = async (values) => {
     setLoading(true);
     try {
-      /*  // istegini endpointe gonder
-       const data = await services.user.login(values);
-       // token'i sifrelenmis localstorage'e kaydet
-       services.encryptedLocalStorage.setItem(
-           "pickanddrivetoken",
-           data.token
-       );
-       // token ile kullanici bilgilerini al
-       const responseUser = await services.user.getUser();
-       // kullanici bilgilerini merkezi state'e kaydet
-       dispatch(loginSuccess(responseUser));
-       utils.functions.swalToast(
-           "You have successfully logged in",
-           "success"
-       );
-       navigate(routes.home); */
+       await services.user.register(values);
+            utils.functions.swalToast(
+                "You have successfully registered!",
+                "success"
+            );
+            navigate(routes.login);
+      
     } catch (error) {
-      /*  dispatch(loginFailure());
-       utils.functions.swalToast(error.response.data.message, "error"); */
+      console.log(error);
+            utils.functions.swalToast(error.response.data.message, "error");
     } finally {
       setLoading(false);
     }
@@ -122,31 +131,23 @@ const RegisterPage = () => {
 
               {
                 formItems.map((item) => (
-                  <UserForm key={item.name} formik={formik}  {...item} />
+                  <div key={item.name} className="mb-5">
+                      <UserForm key={item.name} formik={formik}  {...item}/>
+                  </div>
                 ))
               }
               <hr />
-
-
-
-              <UserForm
-                formik={formik}
-                name="email"
-                placeholder="Email"
-                icon={<AiOutlineUser />}
-              />
-
-              <PasswordInput
-                placeholder="Password"
-                name="password"
-                formik={formik}
-              />
-              <PasswordInput
-                placeholder="Confirm Password"
-                name="password"
-                formik={formik}
-              />
-
+              {
+               passwordItems.map((item, index) => (
+                 <div key={item.name} className="mb-2">
+                      {item.component ? (
+                         <item.component formik={formik} {...item} className="g-5" />
+                      ) : (
+                         <UserForm formik={formik} {...item} className="g-5" />
+                      )}
+                 </div>
+               ))
+               }
 
               <div className="d-flex justify-content-center">
                 <Button
@@ -156,6 +157,11 @@ const RegisterPage = () => {
                   {loading && <Spinner animation="border" size="sm" />} REGISTER
                 </Button>
               </div>
+              <Link to={"/login"} className="d-flex justify-content-center mt-3"
+                  style={{color:"black"}}
+              >
+                  Do you have already an account?
+                </Link>
               <Spacer height="1rem" />
 
             </Form>
