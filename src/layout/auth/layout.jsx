@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
-const { routes } = constants;
 const AuthLayout = () => {
   return (
     <Container fluid className="auth-layout">
