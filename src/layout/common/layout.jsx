@@ -7,7 +7,6 @@ const CommonLayout = () => {
     <Outlet/>
     <Footer/>
     </>;
-  
 }
 
 export default CommonLayout;
