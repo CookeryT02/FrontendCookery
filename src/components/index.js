@@ -35,6 +35,7 @@ import ProductMap from "./common/product/map/map";
 import Product from "./common/product/product";
 import HomeCarousel from "./common/carousel/carousel";
 import Portfolio from "./common/portfolio/portfolio";
+import UserForm from "./common/user/form/form";
 
 export {
     //ADMIN COMPONENTS
@@ -73,5 +74,6 @@ export {
     ProductMap,
     Product,
     HomeCarousel,
-    Portfolio
+    Portfolio,
+    UserForm
 }

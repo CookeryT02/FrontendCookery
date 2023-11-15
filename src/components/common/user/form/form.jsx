@@ -1,9 +1,10 @@
-import ReactInputMask from "react-input-mask-next";
-import { FloatingLabel, Form } from "react-bootstrap";
-import { utils } from "../../../utils";
+import React from 'react'
+import "./form.scss"
+import { Form, InputGroup } from 'react-bootstrap';
+import { utils } from "../../../../utils";
+import ReactInputMask from 'react-input-mask-next';
 
-
-const CustomForm = (props) => {
+const UserForm = (props) => {
     const {
         asGroup,
         asInput,
@@ -17,7 +18,8 @@ const CustomForm = (props) => {
         placeholder,
         rows,
         type = "text",
-        min
+        min,
+        icon
     } = props;
 
     let properties = {
@@ -54,24 +56,26 @@ const CustomForm = (props) => {
         case "email":
         case "textarea":
             return floating ? (
-                <FloatingLabel label={label} className="mb-3">
+                <FloatingLabel label={label} >
                     <Form.Control {...properties} />
                     <Form.Control.Feedback type="invalid">
                         {formik.errors[name]}
                     </Form.Control.Feedback>
                 </FloatingLabel>
             ) : (
-                <Form.Group as={asGroup} className="mb-3" >
-                    <Form.Label>{label}</Form.Label>
+                <InputGroup as={asGroup} className="mb-3" >
+                    <InputGroup.Text className='icon'>
+                        {icon}
+                    </InputGroup.Text>
                     <Form.Control {...properties} />
                     <Form.Control.Feedback type="invalid" className="mt-2">
-                        {formik.errors[name]}
+                        {formik.touched[name] && formik.errors[name]}
                     </Form.Control.Feedback>
-                </Form.Group>
+                </InputGroup>
             );
         case "select":
             return (
-                <Form.Group as={asGroup} className="mb-3">
+                <Form.Group as={asGroup} className="">
                     <Form.Label>{label}</Form.Label>
                     <Form.Select {...properties}>
                         {itemsArr.map((item) => (
@@ -82,17 +86,7 @@ const CustomForm = (props) => {
                     </Form.Select>
                 </Form.Group>
             );
-        case "checkbox":
-            return <>CHECKBOX</>;
-        case "radio":
-            return <>RADIO</>;
-        case "file":
-            return <>FILE</>;
-        default:
-            break;
     }
+}
 
-    return <div>CustomForm</div>;
-};
-
-export default CustomForm;
+export default UserForm

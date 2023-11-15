@@ -49,7 +49,7 @@ const ContactForm = () => {
 
   const formik = useFormik({
     initialValues: utils.initialValues.contactFormInitialValues,
-    validationSchema: utils.validations.contactFormValidations,
+    validationSchema: utils.validations.contactFormValidationSchema,
     onSubmit,
   });
 
@@ -57,11 +57,12 @@ const ContactForm = () => {
     <Form noValidate onSubmit={formik.handleSubmit} className="contact-form">
       {
         formArray.map((item) => (
-          <CustomForm className="form-element" key={item.name} formik={formik} {...item} />
+          <CustomForm key={item.name} formik={formik}  {...item} />
         ))
       }
 
-      <Button type="submit" disabled={!(formik.dirty && formik.isValid) || loading} className="send-btn">
+      <Button type="submit" disabled={!(formik.dirty && formik.isValid) || loading}
+        className="send-btn">
         {loading && <Spinner animation="border" size="sm" />}
         SEND
       </Button>

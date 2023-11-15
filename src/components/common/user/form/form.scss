@@ -1,12 +1,12 @@
-@use "../../../styles/variables" as v;
+@use "../../../../styles/variables" as v;
 
-.custom-icon {
+
+.icon {
     background-color: v.$color1_2 !important;
-    border: 1px solid v.$color1_2 !important;
     border-radius: 0 !important;
 }
 
-.lock::after {
+.icon::after {
     content: "";
     display: inline-block;
     width: 1px;

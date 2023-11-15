@@ -1,9 +1,9 @@
 //FUNCTIONS
-
+import { validCheck, swalQuestion, swalToast } from "./functions/functions";
 
 //INITIAL VALUES
 import {
-    contactFormInitialValues
+    contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
 } from "./initial-values/initial-values"
 
 
@@ -16,16 +16,16 @@ import {
 
 
 import {
-    contactFormValidations
+    contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema
 } from "./validations/validations"
 
 
 
 export const utils = {
-    functions: {},
+    functions: { validCheck, swalQuestion, swalToast },
     initialValues: {
-        contactFormInitialValues
+        contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
     },
     tables: {},
-    validations: { contactFormValidations },
+    validations: { contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema },
 }

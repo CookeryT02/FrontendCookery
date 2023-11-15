@@ -1,4 +1,4 @@
-import { Container, InputGroup, Navbar } from "react-bootstrap";
+import { Button, Container, Form, InputGroup, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { BiSearchAlt2 } from "react-icons/bi";
 import "./top-bar.scss"
@@ -27,19 +27,14 @@ const TopBar = () => {
           </Link>
 
 
-          <InputGroup className="inputGroup ">
-            <input type="search"
-              name=""
-              id=""
-              value={searchText}
-              onChange={handleInputChange} />
-            <button className="searchButton" disabled={!searchText} onClick={handleSearch} >
-              <BiSearchAlt2
-                className="searchIcon"
-                size={19}
+          <InputGroup >
+            <Form.Control value={searchText}
+              onChange={handleInputChange}
+            >
+            </Form.Control>
 
-              />
-            </button>
+            <Button disabled={!searchText} onClick={handleSearch}><BiSearchAlt2 /></Button>
+
           </InputGroup>
 
           <TopBarIcons />

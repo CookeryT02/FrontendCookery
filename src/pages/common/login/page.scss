@@ -1,0 +1,54 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/mixins.scss" as m;
+
+.user-icon {
+    color: v.$color2;
+    margin-bottom: 2rem;
+}
+
+input {
+    background-color: v.$color1_2 !important;
+    border-radius: 0 !important;
+    border: 1px solid v.$color1_2 !important;
+}
+
+.lnk {
+    color: v.$color1;
+    font-size: small;
+}
+
+.nw-user {
+    font-weight: 500;
+}
+
+.lnk:hover {
+    color: black;
+}
+
+.login-btn {
+
+    background-color: v.$color2_2 !important;
+    color: black !important;
+    font-weight: 500;
+    border-radius: 1px !important;
+    width: 60%;
+    border: none !important;
+
+    margin: 1.6rem auto 0;
+
+    &:hover {
+        background-color: v.$color2 !important;
+    }
+
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: small;
+
+    margin-top: -0.5rem;
+
+
+}

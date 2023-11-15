@@ -3,7 +3,7 @@
 
 .tbContainer {
 
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
 
     @media (max-width: 576px) {
         img {
@@ -17,45 +17,42 @@
         }
     }
 
-    .inputGroup {
+    .input-group {
 
         justify-content: center;
         display: flex;
         align-items: center;
+        width: 50%;
 
 
-        input {
-            background-color: v.$color1_2;
+        .form-control {
+            background-color: red;
             border-radius: 2px;
-            border: none;
-            width: 50%;
-            outline: none;
-            padding: 2px 5px;
+            border: none !important;
+
             color: v.$color1;
 
         }
 
         @media (max-width: 576px) {
             input {
-                width: 75%;
+                width: 60%;
             }
         }
 
 
         @media (min-width: 576px) and (max-width: 767px) {
             input {
-                width: 70%;
+                width: 55%;
             }
         }
 
 
-        .searchButton {
+        .btn {
             border: none;
             background-color: v.$color2;
             color: v.$color1;
-            border-radius: 3px;
-            padding: 2px 4px;
-
+            border-radius: 0;
         }
 
 
