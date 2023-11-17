@@ -28,7 +28,7 @@ const RegisterPage = () => {
       icon: <AiOutlineUser />
     },
     {
-      name: "birthday",
+      name: "birthDate",
       label: "Birthday",
       placeholder: "Enter birthday",
       asInput: "ReactInputMask",
@@ -36,7 +36,7 @@ const RegisterPage = () => {
       icon: <MdDateRange />
     },
     {
-      name: "phoneNumber",
+      name: "phone",
       label: "Phone Number",
       placeholder: "Enter phone number",
       asInput: "ReactInputMask",
@@ -62,7 +62,7 @@ const RegisterPage = () => {
       icon: <CiLocationOn/>
     },
     {
-      name: "taxNumber",
+      name: "taxNo",
       label: "Tax number",
       placeholder: "Enter tax number",
       icon: <TbReceiptTax/>

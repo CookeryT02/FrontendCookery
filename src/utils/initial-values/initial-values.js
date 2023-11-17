@@ -13,11 +13,12 @@ export const registerFormInitialValues = {
     email: "",
     password: "",
     confirmPassword: "",
-    phoneNumber: "",
+    phone: "",
     address: "",
     city: "",
     country: "",
-    taxNumber: ""
+    taxNo: "",
+    birthDate:"",
 };
 
 // CONTACT FORM
