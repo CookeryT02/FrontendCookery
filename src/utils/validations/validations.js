@@ -45,11 +45,11 @@ export const registerFormValidationSchema = Yup.object({
         .max(50, "Address must be at most 50 characters")
         .required("Please enter your address"),
     city: Yup.string()
-        .required("Please enter your city"),
+        .required("Please enter your zip code"),
     country: Yup.string()
-        .required("Please enter your country"),
+        .required("Please enter your zip code"),
     taxNo: Yup.string()
-        .required("Please enter your tax no"),
+        .required("Please enter your zip code"),
     birthDate: Yup.string()
         .required("Please enter your birth date"),
 });
