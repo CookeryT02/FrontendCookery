@@ -1,7 +1,7 @@
 import axios from "axios";
 import { services } from "..";
 
-const API_URL = "https://localhost:8080";
+const API_URL = "https://order-management-backend-v4-ae27edbd92c7.herokuapp.com";
 
 // COMMON ENDPOINTS
 export const login = async (payload) => {

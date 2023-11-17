@@ -18,7 +18,7 @@ export const registerFormInitialValues = {
     city: "",
     country: "",
     taxNo: "",
-    birthDate:"",
+    birthDate: "",
 };
 
 // CONTACT FORM

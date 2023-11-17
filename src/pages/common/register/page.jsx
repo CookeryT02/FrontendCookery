@@ -14,19 +14,16 @@ const RegisterPage = () => {
   const formItems = [
     {
       name: "firstName",
-      label: "First Name",
       placeholder: "Enter first name",
       icon: <AiOutlineUser />
     },
     {
       name: "lastName",
-      label: "Last Name",
       placeholder: "Enter last name",
       icon: <AiOutlineUser />
     },
     {
       name: "birthDate",
-      label: "Birthday",
       placeholder: "Enter birthday",
       asInput: "ReactInputMask",
       mask: "99/99/9999",
@@ -34,29 +31,24 @@ const RegisterPage = () => {
     },
     {
       name: "phone",
-      label: "Phone Number",
       placeholder: "Enter phone number",
       asInput: "ReactInputMask",
       mask: "(999) 999-9999",
     },
     {
       name: "address",
-      label: "Address",
       placeholder: "Enter address",
     },
     {
       name: "city",
-      label: "City",
       placeholder: "Enter city",
     },
     {
       name: "country",
-      label: "Country",
       placeholder: "Enter country",
     },
     {
       name: "taxNo",
-      label: "Tax number",
       placeholder: "Enter tax number",
     }
 
@@ -65,18 +57,15 @@ const RegisterPage = () => {
   const passwordItems = [
     {
       name: "email",
-      label: "Email",
       placeholder: "Enter email",
       type: "email",
     },
     {
       name: "password",
-      label: "Password",
       placeholder: "Enter password",
     },
     {
       name: "confirmPassword",
-      label: "Confirm Password",
       placeholder: "Confirm password",
     },
   ];
