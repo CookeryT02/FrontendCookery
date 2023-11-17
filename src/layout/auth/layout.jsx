@@ -1,11 +1,21 @@
-import { Outlet } from "react-router-dom"
-
+import { Col, Container, Row } from "react-bootstrap";
+import { Link, Outlet } from "react-router-dom";
 const AuthLayout = () => {
   return (
-    <>
-      <Outlet/>
-    </>
-  )
-}
+    <Container fluid className="auth-layout">
+      <Row>
+        <Col lg={6} className="banner">
+          <img src="./img/login-img.png" alt="" />
+        </Col>
+        <Link></Link>
 
-export default AuthLayout
+        <Col>
+          login page
+          <Outlet />
+        </Col>
+      </Row>
+    </Container>
+  );
+};
+
+export default AuthLayout;

@@ -26,6 +26,7 @@ const LoginPage = () => {
     try {
 
       const data = await services.user.login(values);
+      console.log(data.token)
       // save token
       utils.functions.swalToast("Login successful", "success")
       services.encryptedLocalStorage.setItem("token", data.token)
@@ -59,7 +60,7 @@ const LoginPage = () => {
       <Container>
         <Row>
           <FaUsers size={200} className="user-icon" />
-          <Spacer height="2rem" />
+
           <Col md={6} lg={5} xl={4} className="mx-auto">
             <Form noValidate onSubmit={formik.handleSubmit} className="login-form">
 
@@ -102,7 +103,7 @@ const LoginPage = () => {
         </Row >
 
       </Container >
-      <Spacer height="5rem" />
+      <Spacer height="4rem" />
 
     </>
   )
