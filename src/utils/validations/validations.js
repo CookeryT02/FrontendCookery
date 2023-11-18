@@ -35,7 +35,7 @@ export const registerFormValidationSchema = Yup.object({
     confirmPassword: Yup.string()
         .oneOf([Yup.ref("password"), null], "Passwords fields doesn't match")
         .required("Please confirm your password"),
-    phoneNumber: Yup.string()
+    phone: Yup.string()
         .matches(/^[\d\s()/-]+$/, "There are invalid characters in your phone number")
         .min(14, "Phone number must be at least 10 digits")
         .max(14, "Phone number must be at most 10 digits")
@@ -45,11 +45,13 @@ export const registerFormValidationSchema = Yup.object({
         .max(50, "Address must be at most 50 characters")
         .required("Please enter your address"),
     city: Yup.string()
-        .required("Please enter your zip code"),
+        .required("Please enter your city"),
     country: Yup.string()
-        .required("Please enter your zip code"),
-    taxNumber: Yup.string()
-        .required("Please enter your zip code"),
+        .required("Please enter your country"),
+    taxNo: Yup.string()
+        .required("Please enter your tax no"),
+    birthDate: Yup.string()
+        .required("Please enter your birth date"),
 });
 
 

@@ -14,41 +14,42 @@ const RegisterPage = () => {
   const formItems = [
     {
       name: "firstName",
-      label: "First Name",
       placeholder: "Enter first name",
       icon: <AiOutlineUser />
     },
     {
       name: "lastName",
-      label: "Last Name",
       placeholder: "Enter last name",
+      icon: <AiOutlineUser />
     },
     {
-      name: "phoneNumber",
-      label: "Phone Number",
+      name: "birthDate",
+      placeholder: "Enter birthday",
+      asInput: "ReactInputMask",
+      mask: "99/99/9999",
+      icon: <MdDateRange />
+    },
+    {
+      name: "phone",
       placeholder: "Enter phone number",
       asInput: "ReactInputMask",
       mask: "(999) 999-9999",
     },
     {
       name: "address",
-      type: "textarea",
       placeholder: "Enter address",
       rows: 2
     },
     {
       name: "city",
-      label: "City",
       placeholder: "Enter city",
     },
     {
       name: "country",
-      label: "Country",
       placeholder: "Enter country",
     },
     {
-      name: "taxNumber",
-      label: "Tax number",
+      name: "taxNo",
       placeholder: "Enter tax number",
     }
 
@@ -57,18 +58,15 @@ const RegisterPage = () => {
   const passwordItems = [
     {
       name: "email",
-      label: "Email",
       placeholder: "Enter email",
       type: "email",
     },
     {
       name: "password",
-      label: "Password",
       placeholder: "Enter password",
     },
     {
       name: "confirmPassword",
-      label: "Confirm Password",
       placeholder: "Confirm password",
     },
   ];
