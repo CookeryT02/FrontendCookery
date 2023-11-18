@@ -5,20 +5,26 @@ import { useFormik } from "formik";
 import { utils } from "../../../utils";
 import { useState } from "react";
 import PasswordInput from "../../../components/common/password-input/password-input";
-import { Link } from "react-router-dom";
-import "./page.scss";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaUsers } from "react-icons/fa"
 import { BiUser } from "react-icons/bi"
 import { services } from "../../../services";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginSuccess } from "../../../store/slice/auth/auth-slice";
 import UserForm from "../../../components/common/user/form/form";
+import { constants } from "../../../constants";
+import "./page.scss";
+
+const { routes } = constants;
 
 
 
 const LoginPage = () => {
 
+  const { user } = useSelector((state) => state.auth)
+
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSubmit = async (values) => {
@@ -26,13 +32,13 @@ const LoginPage = () => {
     try {
 
       const data = await services.user.login(values);
-      console.log(data.token)
-      // save token
-      utils.functions.swalToast("Login successful", "success")
-      services.encryptedLocalStorage.setItem("token", data.token)
+      services.encryptedLocalStorage.setItem("ctToken", data.token)
+      const responseUser = await services.user.getUser();
+      dispatch(loginSuccess(responseUser))
 
-      dispatch(loginSuccess())
       utils.functions.swalToast("Login successful", "success")
+
+      navigate(routes.home);
 
     } catch (error) {
       dispatch(loginFailure());
@@ -52,6 +58,7 @@ const LoginPage = () => {
     onSubmit,
   });
 
+  if (Object.keys(user).length > 0) return <Navigate to={routes.home} />
 
   return (
     <>

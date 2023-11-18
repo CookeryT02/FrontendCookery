@@ -15,7 +15,7 @@ export const register = async (payload) => {
 
 // USER ENDPOINTS
 export const getUser = async () => {
-    const response = await axios.get(`${API_URL}/user`, services.authHeader());
+    const response = await axios.get(`${API_URL}/users/auth`, services.authHeader());
     return response.data;
 };
 export const updatePassword = async (dto) => {
