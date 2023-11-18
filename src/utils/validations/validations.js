@@ -67,8 +67,6 @@ export const contactFormValidationSchema = Yup.object({
         .email("Invalid email address")
         .required("Please enter your email address"),
     phone: Yup.string()
-        .min(13, "Phone number must be at least 13 digits")
-        .max(13, "Phone number must be at most 13 digits")
         .required("Please enter your phone number"),
     message: Yup.string()
         .min(10, "Message must be at least 10 characters")

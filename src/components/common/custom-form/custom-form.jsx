@@ -34,7 +34,7 @@ const CustomForm = (props) => {
             placeholder: placeholder,
             type: type,
             min: min,
-            rows: rows
+            rows: rows,
         };
     } else if (type === "textarea") {
         properties = {

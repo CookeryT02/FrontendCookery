@@ -7,9 +7,10 @@ const App = () => {
   const [loading, setLoading] = useState(false);
 
   return <>
-  {
-    loading ? <LoadingPage/> : <AppRouter/>
-  }
+    {
+
+      loading ? <LoadingPage /> : <AppRouter />
+    }
   </>
 };
 
