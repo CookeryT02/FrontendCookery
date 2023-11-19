@@ -4,6 +4,7 @@ import { utils } from "../../../../utils";
 import { Button, Form, Spinner } from "react-bootstrap";
 import CustomForm from "../../custom-form/custom-form";
 import "./form.scss"
+import { services } from "../../../../services";
 
 
 const formArray = [
@@ -37,12 +38,13 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (values) => {
+    setLoading(true);
     try {
-      // service contact send message( values)
-      // success message
-      formik.resetForm
+      await services.contact.sendMessage(values)
+      utils.functions.swalToast("Message sent.", "success")
+      formik.resetForm();
     } catch (error) {
-      //error message
+      utils.functions.swalToast("message failed to send ", "error")
     }
     finally { setLoading(false) }
   }
