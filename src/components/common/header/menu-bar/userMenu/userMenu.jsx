@@ -22,6 +22,7 @@ const UserMenu = () => {
             .then((response) => {
                 if (response.isConfirmed) {
                     dispatch(logout());
+
                 }
             })
     }

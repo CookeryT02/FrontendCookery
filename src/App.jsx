@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
-import { LoadingPage } from "./pages";
 import AppRouter from "./router";
 import { services } from "./services";
 import { useDispatch } from "react-redux";
 import { loginFailure, loginSuccess } from "./store/slice/auth/auth-slice";
+import { LoadingPage } from "./pages";
 
 const App = () => {
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   const loadData = async () => {
