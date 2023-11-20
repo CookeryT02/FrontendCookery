@@ -1,11 +1,11 @@
 import axios from "axios";
 import { services } from "..";
 
-const API_URL = import.meta.env.VITE_APP_API_URL;
+const API_URL = "https://order-management-backend-v4-ae27edbd92c7.herokuapp.coms";
 
 // COMMON ENDPOINTS
 export const sendMessage = async (message) => {
-    const response = await axios.post(`${API_URL}/contactmessage/visitors`, message);
+    const response = await axios.post(`${API_URL}/contact-messages`, message);
     return response.data;
 }
 

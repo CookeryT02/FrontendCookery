@@ -5,6 +5,7 @@ import { TfiMapAlt } from "react-icons/tfi";
 import { PiSquaresFourDuotone } from "react-icons/pi";
 import { SlEarphones } from "react-icons/sl";
 import { IoIosLogIn } from "react-icons/io";
+import UserMenu from "./userMenu/userMenu";
 
 const MenuBar = () => {
 
@@ -32,9 +33,9 @@ const MenuBar = () => {
                     <li>Sinks and Countertops</li>
                   </ul>
                 </div>
-                
+
               </NavDropdown>
-  
+
               <Nav.Link href="/">
                 {" "}
                 <span>
@@ -75,6 +76,7 @@ const MenuBar = () => {
                 Login
               </Nav.Link>
             </Nav>
+            <UserMenu />
           </Navbar.Collapse>
         </Container>
       </Navbar>

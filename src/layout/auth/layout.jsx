@@ -1,20 +1,21 @@
-import { Col, Container, Row } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
-const AuthLayout = () => {
-  return (
-    <Container fluid className="auth-layout">
-      <Row>
-        <Col lg={6} className="banner">
-          <img src="./img/login-img.png" alt="" />
-        </Col>
-        <Link></Link>
 
-        <Col>
-          login page
-          <Outlet />
-        </Col>
-      </Row>
-    </Container>
+import { Navigate } from "react-router-dom";
+import { constants } from "../../constants";
+import { useSelector } from "react-redux";
+
+const { routes, website } = constants
+
+
+const AuthLayout = () => {
+
+  const { isLoggedIn, user } = useSelector((state) => state.auth)
+
+
+  if (isLoggedIn) return <Navigate to={routes.home} />
+
+  console.log(isLoggedIn)
+  return (
+    <Navigate to={routes.login} />
   );
 };
 

@@ -80,13 +80,13 @@ const routes = {
     contact: "/contact",
     forbidden: "/forbidden",
     home: "/",
-    login: "/auth/login",
+    login: "/login",
     privacyPolicy: "/privacy-policy",
     register: "/auth/register",
     userProfile: "/user",
     productMap: "/product-map",
     portfolio: "/portfolio",
-    
+
 
 };
 

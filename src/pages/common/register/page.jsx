@@ -38,6 +38,7 @@ const RegisterPage = () => {
     {
       name: "address",
       placeholder: "Enter address",
+      rows: 2
     },
     {
       name: "city",
@@ -114,7 +115,6 @@ const RegisterPage = () => {
       <Container>
         <Row>
           <FaUsers size={200} className="user-icon mb-2rem" />
-
           <Col md={6} lg={5} xl={4} className="mx-auto">
             <Form noValidate onSubmit={formik.handleSubmit} className="login-form">
 
