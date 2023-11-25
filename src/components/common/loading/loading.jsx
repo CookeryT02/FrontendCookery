@@ -1,6 +1,11 @@
+import { Spinner } from "react-bootstrap";
+import "./loading.scss"
+
 const Loading = () => {
   return (
-    <div>Loading</div>
+    <div className="loading">
+      <Spinner animation="border" />
+    </div>
   )
 };
 

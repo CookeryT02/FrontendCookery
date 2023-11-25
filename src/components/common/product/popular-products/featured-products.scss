@@ -2,16 +2,23 @@
 @use "../../../../styles/mixins" as m;
 
 .popular-products {
+
     display: flex;
     justify-content: center;
     align-items: center;
 
+    .row {
+        border: 1px solid v.$color2_2;
+        margin: 1rem 0;
+        background-color: v.$color1_2;
+    }
 
     .small-logo {
         display: block;
         margin: auto;
         height: 50px;
         width: auto;
+        margin-bottom: 1rem;
     }
 
     .txt {
@@ -20,6 +27,7 @@
         font-weight: 600;
         font-size: large;
         color: v.$color1_1;
+        margin-bottom: 0;
     }
 
 }

@@ -7,7 +7,7 @@ import Loading from "../../loading/loading";
 import ProductCard from "../product-card/product-card";
 
 const PopularProducts = () => {
-  const { user } = useSelector((state) => state.auth);
+  const { user, isLoggedIn } = useSelector((state) => state.auth);
 
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
@@ -29,22 +29,26 @@ const PopularProducts = () => {
     loadData();
   })
   return (
-    <div className="popular-products">
+    <>
+      {isLoggedIn &&
+        <div className="popular-products">
+          <Container className="content-container">
+            <img src="/img/small-logo.png" class="small-logo" alt="" />
+            <p className="txt">POPULAR PRODUCTS</p>
+            <Row className="gy-5">
+              {loading ? <Loading /> :
+                products && products.map((product, index) => (
+                  <Col xs={4} lg={2} key={product.id || index}>
+                    <ProductCard {...product} />
+                  </Col>
+                ))
+              }
+            </Row>
+          </Container>
+        </div>
+      }
+    </>
 
-      <Container class="content-container">
-        <img src="/img/small-logo.png" class="small-logo" alt="" />
-        <p className="txt">POPULAR PRODUCTS</p>
-        <Row className="gy-5">
-          {loading ? <Loading /> :
-            products && products.map((product, index) => (
-              <Col md={6} lg={4} key={product.id || index}>
-                <ProductCard {...product} />
-              </Col>
-            ))
-          }
-        </Row>
-      </Container>
-    </div>
   )
 };
 

@@ -86,6 +86,7 @@ const routes = {
     userProfile: "/user",
     productMap: "/product-map",
     portfolio: "/portfolio",
+    products: "/products"
 
 
 };
