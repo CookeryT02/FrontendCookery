@@ -4,7 +4,7 @@ import { createReservation, deleteReservation, downloadReservationReports, getRe
 
 import { deleteUser, downloadUserReports, getUser, getUserAdmin, getUsersByPage, login, register, updatePassword, updateUser, updateUserAdmin } from "./user/user-service";
 
-import { addVehicle, deleteVehicle, deleteVehicleImage, downloadVehicleReports, getVehicleById, getVehicles, getVehiclesByPage, updateVehicle, uploadVehicleImage } from "./vehicle/vehicle-service";
+import { getFeaturedProducts, getProductsByPage } from "./product/product-service"
 
 import { encryptedLocalStorage } from "./encrypt-storage/encrypt-storage";
 import { authHeader } from "./auth-header/auth-header";
@@ -46,18 +46,12 @@ export const services = {
         getUsersByPage,
         updateUserAdmin,
     },
-    vehicle: {
+    product: {
         // COMMON ENDPOINTS
-        getVehicleById,
-        getVehicles,
-        getVehiclesByPage,
+        getFeaturedProducts,
+        getProductsByPage,
         // ADMIN ENDPOINTS
-        addVehicle,
-        deleteVehicle,
-        deleteVehicleImage,
-        downloadVehicleReports,
-        updateVehicle,
-        uploadVehicleImage,
+
     },
     encryptedLocalStorage,
     authHeader

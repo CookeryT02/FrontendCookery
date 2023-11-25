@@ -1,0 +1,25 @@
+@use "../../../../styles/variables" as v;
+@use "../../../../styles/mixins" as m;
+
+.popular-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .small-logo {
+        display: block;
+        margin: auto;
+        height: 50px;
+        width: auto;
+    }
+
+    .txt {
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: large;
+        color: v.$color1_1;
+    }
+
+}

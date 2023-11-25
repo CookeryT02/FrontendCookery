@@ -1,10 +1,13 @@
-import { HomeCarousel } from "../../../components";
+import { HomeCarousel, PopularProducts, Spacer } from "../../../components";
 
 const HomePage = () => {
   return (
     <div>
       <HomeCarousel />
-      <h1>HomePage</h1>
+      <Spacer />
+      <PopularProducts />
+      <Spacer />
+
     </div>
   );
 };

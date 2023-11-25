@@ -30,8 +30,8 @@ import UserProfileForm from "./common/user/profile-form/profile-form";
 import UserOffersDetailsAccordion from "./common/user/offers/details-accordion/details-accordion";
 import UserOffersDetailsPanel from "./common/user/offers/details-panel/details-panel";
 import UserOffersTable from "./common/user/offers/table/table";
-import FeaturedProducts from "./common/product/featured-products/featured-products";
 import ProductMap from "./common/product/map/map";
+import PopularProducts from "./common/product/popular-products/featured-products";
 import Product from "./common/product/product";
 import HomeCarousel from "./common/carousel/carousel";
 import Portfolio from "./common/portfolio/portfolio";
@@ -70,7 +70,7 @@ export {
     UserOffersDetailsAccordion,
     UserOffersDetailsPanel,
     UserOffersTable,
-    FeaturedProducts,
+    PopularProducts,
     ProductMap,
     Product,
     HomeCarousel,
