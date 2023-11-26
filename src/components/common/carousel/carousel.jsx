@@ -4,32 +4,32 @@ import { Col, Container, Image, Row } from 'react-bootstrap';
 
 
 const HomeCarousel = () => {
-    const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-    const handleSelect = (selectedIndex) => {
-        setIndex(selectedIndex);
-    }
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  }
 
   return <>
-  
-  <Container>
-    <Row>
-      <Col xs lg={12}>
-      <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <Image text="First slide" src='/public/img/banner.jpg' width="100%"/>
-      </Carousel.Item>
-      <Carousel.Item>
-      <Image text="second slide" src='/public/img/banner.jpg' width="100%"/>
-      </Carousel.Item>
-      <Carousel.Item>
-      <Image text="third slide" src='/public/img/banner.jpg' width="100%" />
-      </Carousel.Item>
-    </Carousel>
-      </Col>
-    </Row>
-  </Container>
-   
+
+    <Container>
+      <Row>
+        <Col xs lg={12}>
+          <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item>
+              <Image text="First slide" src='/img/banner.jpg' width="100%" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image text="second slide" src='/img/banner.jpg' width="100%" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Image text="third slide" src='/img/banner.jpg' width="100%" />
+            </Carousel.Item>
+          </Carousel>
+        </Col>
+      </Row>
+    </Container>
+
   </>
 };
 

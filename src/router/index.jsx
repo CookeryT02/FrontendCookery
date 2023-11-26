@@ -23,7 +23,6 @@ import {
     LoginPage,
     ModelsPage,
     PortfolioPage,
-    ProductsMapPage,
     RegisterPage,
     ResetPasswordPage,
     SearchResultPage,
@@ -31,6 +30,8 @@ import {
     UserOfferDetailsPage,
     UserOffersPage,
     UserProfilePage,
+    ProductsMapPage,
+    ProductsMap,
 
 
 } from "../pages"
@@ -94,7 +95,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "product-map",
-                element: <ProductsMapPage />
+                element: <ProductsMap />
             }
         ],
     },

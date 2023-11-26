@@ -1,7 +1,9 @@
-const ProductsMapPage = () => {
-  return (
-    <div>ProductsMapPage</div>
-  )
-};
+import React from 'react'
 
-export default ProductsMapPage;
+const page = () => {
+  return (
+    <div>page</div>
+  )
+}
+
+export default page

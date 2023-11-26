@@ -4,7 +4,7 @@ import { createReservation, deleteReservation, downloadReservationReports, getRe
 
 import { deleteUser, downloadUserReports, getUser, getUserAdmin, getUsersByPage, login, register, updatePassword, updateUser, updateUserAdmin } from "./user/user-service";
 
-import { getFeaturedProducts, getProductsByPage } from "./product/product-service"
+import { getFeaturedProducts, getProductsByPage, getAllCategories, getProductsByCategoryId } from "./product/product-service"
 
 import { encryptedLocalStorage } from "./encrypt-storage/encrypt-storage";
 import { authHeader } from "./auth-header/auth-header";
@@ -51,7 +51,8 @@ export const services = {
         getFeaturedProducts,
         getProductsByPage,
         // ADMIN ENDPOINTS
-
+        getAllCategories,
+        getProductsByCategoryId,
     },
     encryptedLocalStorage,
     authHeader

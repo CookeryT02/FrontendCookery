@@ -27,7 +27,7 @@ const PopularProducts = () => {
 
   useEffect(() => {
     loadData();
-  })
+  }, []);
   return (
     <>
       {isLoggedIn &&

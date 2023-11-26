@@ -62,7 +62,7 @@ const Footer = () => {
           <Row className="left-side">
             <Col xs={3}>
               <Link to={home}>
-                <img src="../../../../public/cookery-tech-logo.png" alt="" />
+                <img src="/cookery-tech-logo.png" alt="" />
               </Link>
             </Col>
             <Col xs={9}>

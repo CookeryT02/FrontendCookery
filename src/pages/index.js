@@ -34,6 +34,7 @@ import UserOfferDetailsPage from "./common/user/offers/offers-Details/page"
 import UserOffersPage from "./common/user/offers/page"
 import UserProfilePage from "./common/user/profile/page"
 import LoadingPage from "./common/loading/page"
+import ProductsMap from "./common/productsmap/products-map"
 
 
 
@@ -75,6 +76,7 @@ export {
     UserOffersPage,
     UserProfilePage,
     LoadingPage,
+    ProductsMap,
 
 
 
