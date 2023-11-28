@@ -9,9 +9,19 @@ export const login = async (payload) => {
     return response.data;
 };
 export const register = async (payload) => {
-    const response = await axios.post(`${API_URL}/register`, payload);
-    return response.data;
-};
+    try {
+      const response = await axios.post(`${API_URL}/register`, payload);
+  
+      if (response.data) {
+        return response.data;
+      } else {
+        throw new Error('Invalid response format');
+      }
+    } catch (error) {
+      // Hata durumunu yönetmek için
+      throw new Error(error.response?.data?.message || 'An error occurred');
+    }
+  };
 
 // USER ENDPOINTS
 export const getUser = async () => {
