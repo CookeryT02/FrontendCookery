@@ -37,20 +37,21 @@ const MapCategories = () => {
             ) : (
                 <Row>
                     <Col xs={4} xl={3}>
-                        {categories.map((category, index) => (
+                        {categories && categories.map((category, index) => (
                             <Container key={category.id || index}>
                                 <Button
                                     className={`w-100 mb-3 category-button ${selectedCategory === category ? 'active' : ''
                                         }`}
                                     onClick={() => handleCategoryClick(category)}
                                 >
-                                    {category.title}
+                                    
+                                    {category &&  category.title}
                                 </Button>
                             </Container>
                         ))}
                     </Col>
                     <Col xs={8} xl={9}>
-                        <h4>{selectedCategory.title}</h4>
+                        <h4>{selectedCategory && selectedCategory.title}</h4>
                         {selectedCategory && <MapProducts categoryId={selectedCategory.id} />}
                     </Col>
                 </Row>
