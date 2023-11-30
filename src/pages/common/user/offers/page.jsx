@@ -1,6 +1,11 @@
+import { PageHeader } from "../../../../components";
+
 const UserOffersPage = () => {
   return (
-    <div>UserOffersPage</div>
+    <>
+
+
+    </>
   )
 };
 

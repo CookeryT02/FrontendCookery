@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { Navigate, Outlet } from "react-router-dom"
+import { Footer, Header } from "../../components";
 
 const UserLayout = () => {
 
@@ -9,13 +10,15 @@ const UserLayout = () => {
   console.log(isLoggedIn);
 
   //TODO: isLoggedIn === false ise login sayfasina yonlendir
-  if (isLoggedIn) {
+  if (!isLoggedIn) {
     return <Navigate to={"/login"} />
   }
 
   return (
     <>
+      <Header />
       <Outlet />
+      <Footer />
     </>
   )
 }
