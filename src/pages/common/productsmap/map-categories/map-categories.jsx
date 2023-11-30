@@ -3,11 +3,14 @@ import { Button, Col, Container, Row } from 'react-bootstrap'
 import { services } from '../../../../services'
 import Loading from '../../../../components/common/loading/loading';
 import MapProducts from '../map-products/map-products';
+import { useNavigate } from 'react-router-dom';
+
 
 const MapCategories = () => {
     const [loading, setLoading] = useState(true);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
+    
 
     const loadData = async () => {
         try {
@@ -28,6 +31,7 @@ const MapCategories = () => {
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
+        
     };
 
     return (

@@ -6,7 +6,7 @@ import { PiSquaresFourDuotone } from "react-icons/pi";
 import { SlEarphones } from "react-icons/sl";
 import { constants } from "../../../../constants";
 import UserMenu from "./userMenu/userMenu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -48,7 +48,7 @@ const MenuBar = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const navigate = useNavigate();
 
   const loadData = async () => {
     try {
@@ -69,6 +69,7 @@ const MenuBar = () => {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+    navigate(`/categories/${category.id}`);
   };
 
   const handleUserMenuClick = (e) => {

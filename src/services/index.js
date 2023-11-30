@@ -1,6 +1,6 @@
 import { deleteMessage, getMessage, getMessagesByPage, sendMessage } from "./contact/contact-service";
 
-import { createReservation, deleteReservation, downloadReservationReports, getReservationById, getReservationByIdAdmin, getReservationsByPage, getReservationsByPageAdmin, isVehicleAvailable, updateReservation } from "./reservation/reservation-service";
+import {getOneCategory} from './category/category-service'
 
 import { deleteUser, downloadUserReports, getUser, getUserAdmin, getUsersByPage, login, register, updatePassword, updateUser, updateUserAdmin } from "./user/user-service";
 
@@ -18,19 +18,7 @@ export const services = {
         getMessage,
         getMessagesByPage,
     },
-    reservation: {
-        // COMMON ENDPOINTS
-        createReservation,
-        getReservationById,
-        getReservationsByPage,
-        isVehicleAvailable,
-        // ADMIN ENDPOINTS
-        deleteReservation,
-        downloadReservationReports,
-        getReservationByIdAdmin,
-        getReservationsByPageAdmin,
-        updateReservation,
-    },
+    
     user: {
         // COMMON ENDPOINTS
         login,
@@ -53,6 +41,12 @@ export const services = {
         // ADMIN ENDPOINTS
         getAllCategories,
         getProductsByCategoryId,
+    },
+    category:{
+        //COMMON ENDPOINTS
+
+        //ADMIN ENDPOINTS
+        getOneCategory,
     },
     encryptedLocalStorage,
     authHeader

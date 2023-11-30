@@ -61,7 +61,7 @@ const router = createBrowserRouter([
                 element: <RegisterPage />
             },
             {
-                path: "categories",
+                path: "categories/:id",
                 element: <CategoriesPage />
             },
             {
