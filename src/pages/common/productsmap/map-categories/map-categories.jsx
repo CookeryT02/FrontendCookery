@@ -36,22 +36,24 @@ const MapCategories = () => {
                 <Loading />
             ) : (
                 <Row>
-                    <Col xs={4} xl={3}>
-                        {categories && categories.map((category, index) => (
-                            <Container key={category.id || index}>
-                                <Button
-                                    className={`w-100 mb-3 category-button ${selectedCategory === category ? 'active' : ''
-                                        }`}
-                                    onClick={() => handleCategoryClick(category)}
-                                >
-                                    
-                                    {category &&  category.title}
-                                </Button>
-                            </Container>
-                        ))}
+                    <Col xs={5} sm={4} xl={3}>
+                        {loading ? <Loading /> :
+                            categories && categories.map((category, index) => (
+                                <Container key={category.id || index}>
+                                    <Button
+                                        className={`w-100 mb-3 category-button ${selectedCategory === category ? 'active' : ''
+                                            }`}
+                                        onClick={() => handleCategoryClick(category)}
+                                    >
+                                        {category.title}
+                                    </Button>
+                                </Container>
+                            ))}
                     </Col>
-                    <Col xs={8} xl={9}>
-                        <h4>{selectedCategory && selectedCategory.title}</h4>
+                    <Col xs={7} sm={8} xl={9}>
+
+                        <h4>{loading ? <Loading /> :
+                            selectedCategory && selectedCategory.title}</h4>
                         {selectedCategory && <MapProducts categoryId={selectedCategory.id} />}
                     </Col>
                 </Row>

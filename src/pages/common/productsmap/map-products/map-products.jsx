@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { services } from '../../../../services';
 import { Loading } from '../../../../components';
+import { Link } from 'react-router-dom';
+import { constants } from '../../../../constants';
+
+
+const { routes } = constants;
 
 const MapProducts = ({ categoryId }) => {
     const [loading, setLoading] = useState(true);
@@ -25,10 +30,10 @@ const MapProducts = ({ categoryId }) => {
         <div className="row mt-4">
             {loading ? <Loading /> : (
                 products.map((product, index) => (
-                    <div key={index} className="col-xl-4 col-md-6">
-                        <div className="product-title">
+                    <div key={index} className="col-md-4 col-sm-6">
+                        <Link to={`${routes.products}/${product.id}`} className="product-title">
                             <p>{product.title}</p>
-                        </div>
+                        </Link>
                     </div>
                 ))
             )}

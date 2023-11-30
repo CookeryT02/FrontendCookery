@@ -1,17 +1,156 @@
 import "./menu-bar.scss";
-import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Button, Container, Dropdown, DropdownToggle, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { AiOutlineHome, AiOutlineExclamationCircle } from "react-icons/ai";
 import { TfiMapAlt } from "react-icons/tfi";
 import { PiSquaresFourDuotone } from "react-icons/pi";
 import { SlEarphones } from "react-icons/sl";
-import { IoIosLogIn } from "react-icons/io";
+import { constants } from "../../../../constants";
 import UserMenu from "./userMenu/userMenu";
+import { Link } from "react-router-dom";
+import { IoIosMenu } from "react-icons/io";
+import { useEffect, useState } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { services } from "../../../../services";
+import Loading from "../../loading/loading";
+
+const { routes } = constants;
+
+const MenuItems = [
+  {
+    title: 'Home',
+    path: '',
+    icon: <AiOutlineHome />
+  },
+  {
+    title: 'About',
+    path: 'about',
+    icon: <AiOutlineExclamationCircle />
+  },
+  {
+    title: 'Product Map',
+    path: 'product-map',
+    icon: <TfiMapAlt />
+  },
+  {
+    title: 'Portfolio',
+    path: 'portfolio',
+    icon: <PiSquaresFourDuotone />
+  },
+  {
+    title: 'Contact',
+    path: 'contact',
+    icon: <SlEarphones />
+  }
+]
 
 const MenuBar = () => {
+  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+  const loadData = async () => {
+    try {
+      const categoriesData = await services.product.getAllCategories();
+      setCategories(categoriesData);
+      setSelectedCategory(categoriesData.length > 0 ? categoriesData[0] : null);
+    } catch (error) {
+      console.log(error)
+    }
+    finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const handleUserMenuClick = (e) => {
+    e.stopPropagation();
+  };
+  return (
+    <div className="bar-menu">
+      <Navbar collapseOnSelect expand="lg" className="navbar p-0">
+        <Container>
+          <NavDropdown
+            title={
+              <>
+                Products <IoMdArrowDropdown />
+              </>
+            }
+            id="collapsible-nav-dropdown"
+            className="product-menu"
+          >
+            <div>
+              <ul>
+                {loading ? <Loading /> :
+                  categories && categories.map((category, index) => (
+                    <li
+                      className={`mb-1 category-li ${selectedCategory === category ? 'active' : ''
+                        }`}
+                      onClick={() => handleCategoryClick(category)}
+                    >
+                      {category.title}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+
+          </NavDropdown>
+
+          <Nav className="me-auto mid-menu">
+            {MenuItems.map((item) => (
+              <Link to={item.path}>
+                <span>
+                  {item.icon}
+                </span>{" "}
+                {item.title}
+              </Link>
+            ))}
+          </Nav>
+          <UserMenu className="user-menu" />
+
+          <Dropdown align="end" className="sm-menu">
+            <DropdownToggle>
+              <IoIosMenu />
+            </DropdownToggle>
+            <Dropdown.Menu>
+
+              {MenuItems.map((item) => (
+                <Dropdown.Item>
+                  <Link to={item.path}>
+                    <span>
+                      {item.icon}
+                    </span>{" "}
+                    {item.title}
+                  </Link>
+                </Dropdown.Item>
+              ))}
+              <Dropdown.Item onClick={handleUserMenuClick} className="p-0 mt-1">
+                <UserMenu />
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Container>
+      </Navbar>
+    </div >
+  );
+};
+
+export default MenuBar;
+
+
+/* const MenuBar = () => {
 
   return (
     <div className="bar-menu">
-      <Navbar collapseOnSelect expand="lg" className="bg-warning p-0">
+      <Navbar collapseOnSelect expand="lg" className="navbar p-0">
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -68,14 +207,6 @@ const MenuBar = () => {
                 Contact
               </Nav.Link>
             </Nav>
-            <Nav>
-              <Nav.Link eventKey={2} href="/login">
-                <span>
-                  <IoIosLogIn />
-                </span>
-                Login
-              </Nav.Link>
-            </Nav>
             <UserMenu />
           </Navbar.Collapse>
         </Container>
@@ -84,4 +215,4 @@ const MenuBar = () => {
   );
 };
 
-export default MenuBar;
+export default MenuBar; */
