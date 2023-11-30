@@ -1,0 +1,33 @@
+@use "../../../../../styles/variables" as v;
+@use "../../../../../styles/mixins" as m;
+
+.user-menu {
+
+    .btn {
+        background-color: v.$color2 !important;
+        border: none;
+        color: v.$color1 !important;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: v.$color2_1 !important;
+            color: v.$color1 !important;
+        }
+    }
+
+    .dropdown-menu {
+        border-radius: 1px !important;
+        margin-top: 5px !important;
+        border: none !important;
+        padding: 5px 0 !important;
+        width: 100%;
+        min-height: 2rem;
+        background-color: v.$color1_2 !important;
+
+        a {
+            margin-left: 0;
+        }
+    }
+
+}

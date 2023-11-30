@@ -5,6 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { utils } from "../../../../../utils";
 import { Button, Dropdown } from 'react-bootstrap';
 import { logout } from '../../../../../store/slice/auth/auth-slice';
+import './user-menu.scss';
+import { IoIosLogIn } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 
 const {
@@ -32,7 +35,7 @@ const UserMenu = () => {
             {isLoggedIn ? (
                 <Dropdown align="end">
                     <Dropdown.Toggle>
-                        {user?.firstName || "Guest"} {user?.lastName || ""}
+                        {user?.firstName || "Guest"} <IoMdArrowDropdown />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item as={Link} onClick={handleLogout}>
@@ -43,9 +46,8 @@ const UserMenu = () => {
             ) : (
                 <>
                     <Button
-                        className="text-capitalize"
                         onClick={() => navigate(login)}>
-                        login
+                        <IoIosLogIn /> login
                     </Button>
                 </>
             )}

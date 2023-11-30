@@ -3,8 +3,9 @@
 
 
 .try {
-    min-height: 30vh;
+    min-height: 33vh;
 }
+
 
 .category-button {
     width: 100%;
@@ -22,19 +23,20 @@
 
 
 .product-title {
-    padding: 5px;
-    padding-left: 17px;
     position: relative;
+    margin-left: 0;
 }
 
 .product-title p {
     margin: 0;
     font-weight: 500;
+    color: v.$color1;
+    padding-left: 16px;
 
     &::before {
         content: '';
         position: absolute;
-        top: 56%;
+        top: 57%;
         left: 0;
         width: 13px;
         height: 13px;

@@ -11,7 +11,7 @@ const TopBarIcons = () => {
     return (
         <span className="icons">
             {
-                !isLoggedIn ? (
+                isLoggedIn ? (
                     <>
 
                         <button className="topbar-icon">
@@ -27,8 +27,8 @@ const TopBarIcons = () => {
                     </>
                 ) : (
                     <>
-                        <button disabled className="icon"><AiOutlineHeart size={30} /></button>
-                        <button disabled className="icon"><HiOutlineShoppingBag size={30} /></button>
+                        <button disabled className="topbar-icon"><AiOutlineHeart size={30} /></button>
+                        <button disabled className="topbar-icon"><HiOutlineShoppingBag size={30} /></button>
                     </>
                 )
             }
