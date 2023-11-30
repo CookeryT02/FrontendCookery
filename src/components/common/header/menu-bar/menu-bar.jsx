@@ -18,27 +18,27 @@ const { routes } = constants;
 const MenuItems = [
   {
     title: 'Home',
-    path: '',
+    path: routes.home,
     icon: <AiOutlineHome />
   },
   {
     title: 'About',
-    path: 'about',
+    path: routes.about,
     icon: <AiOutlineExclamationCircle />
   },
   {
     title: 'Product Map',
-    path: 'product-map',
+    path: routes.productMap,
     icon: <TfiMapAlt />
   },
   {
     title: 'Portfolio',
-    path: 'portfolio',
+    path: routes.portfolio,
     icon: <PiSquaresFourDuotone />
   },
   {
     title: 'Contact',
-    path: 'contact',
+    path: routes.contact,
     icon: <SlEarphones />
   }
 ]

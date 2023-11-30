@@ -11,7 +11,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 
 
 const {
-    routes: { login, register, userProfile, userReservations, adminDashboard },
+    routes: { login, userProfile, userReservations, adminDashboard },
 } = constants;
 
 const UserMenu = () => {
@@ -40,6 +40,9 @@ const UserMenu = () => {
                     <Dropdown.Menu>
                         <Dropdown.Item as={Link} onClick={handleLogout}>
                             Logout
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} to={userProfile}>
+                            Profile
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>

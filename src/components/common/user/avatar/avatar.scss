@@ -1,0 +1,10 @@
+@use "../../../../styles/variables" as v;
+@use "../../../../styles/mixins" as m;
+
+
+.usericon {
+    border-radius: 50%;
+    background-color: v.$color1_2;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
