@@ -30,7 +30,6 @@ import {
     UserOfferDetailsPage,
     UserOffersPage,
     UserProfilePage,
-    ProductsMapPage,
     ProductsMap,
 
 

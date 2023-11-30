@@ -6,8 +6,6 @@ const { routes } = constants;
 
 const ProductCard = (props) => {
 
-
-
     return (
         <Link to={`${routes.products}/${props.id}`}>
             <div className="product-card">
