@@ -10,18 +10,18 @@ export const login = async (payload) => {
 };
 export const register = async (payload) => {
     try {
-      const response = await axios.post(`${API_URL}/register`, payload);
-  
-      if (response.data) {
-        return response.data;
-      } else {
-        throw new Error('Invalid response format');
-      }
+        const response = await axios.post(`${API_URL}/register`, payload);
+
+        if (response.data) {
+            return response.data;
+        } else {
+            throw new Error('Invalid response format');
+        }
     } catch (error) {
-      // Hata durumunu yönetmek için
-      throw new Error(error.response?.data?.message || 'An error occurred');
+        // Hata durumunu yönetmek için
+        throw new Error(error.response?.data?.message || 'An error occurred');
     }
-  };
+};
 
 // USER ENDPOINTS
 export const getUser = async () => {

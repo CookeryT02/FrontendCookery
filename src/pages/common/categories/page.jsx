@@ -1,6 +1,9 @@
+import { PopularProducts } from "../../../components";
+
+
 const CategoriesPage = () => {
   return (
-    <div>CategoriesPage</div>
+    <PopularProducts/>
   )
 };
 
