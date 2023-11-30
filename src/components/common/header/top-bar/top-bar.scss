@@ -29,7 +29,7 @@
             background-color: red;
             border-radius: 2px;
             border: none !important;
-
+            line-height: 1.5rem;
             color: v.$color1;
 
         }
@@ -53,6 +53,7 @@
             background-color: v.$color2;
             color: v.$color1;
             border-radius: 0;
+            padding: 5px;
         }
 
 

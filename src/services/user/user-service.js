@@ -33,7 +33,7 @@ export const updatePassword = async (dto) => {
     return response.data;
 };
 export const updateUser = async (userInfo) => {
-    const response = await axios.put(`${API_URL}/user`, userInfo, services.authHeader());
+    const response = await axios.put(`${API_URL}/user/auth`, userInfo, services.authHeader());
     return response.data;
 };
 

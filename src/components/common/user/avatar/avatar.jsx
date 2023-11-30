@@ -6,10 +6,8 @@ import './avatar.scss';
 const UserAvatar = () => {
   const { user } = useSelector((state) => state.auth);
 
-
-  console.log(user)
   return (
-    <div className="user-avatar">
+    <div className="user-avatar mb-5">
       {
         user?.roles?.includes("Administrator") ? <RiAdminLine size={150} className="usericon" /> : <AiOutlineUser className="usericon" size={150} />
       }

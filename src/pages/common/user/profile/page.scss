@@ -1,0 +1,18 @@
+@use "../../../../styles/variables" as v;
+@use "../../../../styles/mixins.scss" as m;
+
+
+
+.user-button {
+    width: 100%;
+    background-color: v.$color2 !important;
+    border: none !important;
+    border-radius: 1px !important;
+    padding: 10px !important;
+    color: v.$color1 !important;
+    font-weight: 500 !important;
+
+    &.active {
+        background-color: v.$color3 !important;
+    }
+}

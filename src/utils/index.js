@@ -16,7 +16,8 @@ import {
 
 
 import {
-    contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema
+    contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema,
+    userProfileFormValidationSchema
 } from "./validations/validations"
 
 
@@ -27,5 +28,8 @@ export const utils = {
         contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
     },
     tables: {},
-    validations: { contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema },
+    validations: {
+        contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema,
+        userProfileFormValidationSchema
+    },
 }

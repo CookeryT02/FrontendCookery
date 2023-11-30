@@ -3,7 +3,7 @@ import { PopularProducts } from "../../../components";
 
 const CategoriesPage = () => {
   return (
-    <PopularProducts/>
+    <PopularProducts />
   )
 };
 

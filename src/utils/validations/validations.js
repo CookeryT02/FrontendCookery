@@ -75,3 +75,30 @@ export const contactFormValidationSchema = Yup.object({
         .max(200, "Message must be at most 200 characters")
         .required("Please enter your message"),
 });
+
+
+export const userProfileFormValidationSchema = Yup.object({
+    firstName: Yup.string()
+        .min(2, "First name must be at least 2 characters")
+        .max(50, "First name must be at most 50 characters")
+        .required("Please enter your first name"),
+    lastName: Yup.string()
+        .min(2, "Last name must be at least 2 characters")
+        .max(50, "Last name must be at most 50 characters")
+        .required("Please enter your last name"),
+    phone: Yup.string()
+        .matches(/^[\d\s()/-]+$/, "There are invalid characters in your phone number")
+        .min(14, "Phone number must be at least 10 digits")
+        .max(14, "Phone number must be at most 10 digits")
+        .required("Please enter your phone number"),
+    address: Yup.string()
+        .min(5, "Address mustW be at least 5 characters")
+        .max(50, "Address must be at most 50 characters")
+        .required("Please enter your address"),
+    city: Yup.string()
+        .required("Please enter your city"),
+    country: Yup.string()
+        .required("Please enter your country"),
+    taxNo: Yup.string()
+        .required("Please enter your tax no")
+});

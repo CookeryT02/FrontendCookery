@@ -38,11 +38,11 @@ const UserMenu = () => {
                         {user?.firstName || "Guest"} <IoMdArrowDropdown />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item as={Link} onClick={handleLogout}>
-                            Logout
-                        </Dropdown.Item>
                         <Dropdown.Item as={Link} to={userProfile}>
                             Profile
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} onClick={handleLogout}>
+                            Logout
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
