@@ -1,6 +1,6 @@
 import { deleteMessage, getMessage, getMessagesByPage, sendMessage } from "./contact/contact-service";
 
-import {getOneCategory} from './category/category-service'
+import { getOneCategory } from './category/category-service'
 
 import { deleteUser, downloadUserReports, getUser, getUserAdmin, getUsersByPage, login, register, updatePassword, updateUser, updateUserAdmin } from "./user/user-service";
 
@@ -18,7 +18,7 @@ export const services = {
         getMessage,
         getMessagesByPage,
     },
-    
+
     user: {
         // COMMON ENDPOINTS
         login,
@@ -42,7 +42,7 @@ export const services = {
         getAllCategories,
         getProductsByCategoryId,
     },
-    category:{
+    category: {
         //COMMON ENDPOINTS
 
         //ADMIN ENDPOINTS
