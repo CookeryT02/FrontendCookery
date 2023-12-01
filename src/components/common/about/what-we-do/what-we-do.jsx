@@ -4,11 +4,11 @@ import "./what-we-do.scss";
 const WhatWeDo = () => {
   return (
     <Container className="what-we-do ">
-      <Row className="container-fluid">
+      <Row className="container-fluid gap-5">
         <Col lg={4} className="bg-warning p-0">
           <img src="/img/about-page_page0_image.png" alt="" />
         </Col>
-        <Col lg={8}>
+        <Col lg={7}>
           <p>At Cookery Tech Industrial Kitchen Equipment, we specialize in
             providing high-quality and reliable solutions for commercial
             kitchens. With years of experience in the industry, we understand

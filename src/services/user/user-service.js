@@ -29,17 +29,21 @@ export const getUser = async () => {
     return response.data;
 };
 export const updatePassword = async (dto) => {
-    const response = await axios.patch(`${API_URL}/user/auth`, dto, services.authHeader());
+    console.log(dto)
+    const response = await axios.patch(`${API_URL}/users/auth`, dto, services.authHeader());
+    console.log(response)
     return response.data;
 };
 export const updateUser = async (userInfo) => {
-    const response = await axios.put(`${API_URL}/user/auth`, userInfo, services.authHeader());
+    console.log(userInfo)
+    const response = await axios.put(`${API_URL}/users/auth`, userInfo, services.authHeader());
+    console.log(response)
     return response.data;
 };
 
 // ADMIN ENDPOINTS
 export const deleteUser = async (id) => {
-    const response = axios.delete(`${API_URL}/user/${id}/auth`, services.authHeader());
+    const response = axios.delete(`${API_URL}/users/${id}/auth`, services.authHeader());
     return response.data;
 };
 

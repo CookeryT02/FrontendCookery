@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { services } from "../../../../services";
-import { Button, Col, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row, Spinner } from "react-bootstrap";
 import CustomForm from "../../custom-form/custom-form";
 import { utils } from "../../../../utils";
 import "./profile-form.scss"
@@ -13,10 +13,8 @@ const formInputs = [
     label: "First Name"
   },
   {
-    name: "phone",
-    label: "Phone Number",
-    asInput: "ReactInputMask",
-    mask: "(999) 999-9999"
+    name: "lastName",
+    label: "Last Name"
   },
   {
     name: "address",
@@ -25,9 +23,12 @@ const formInputs = [
     rows: 4
   },
   {
-    name: "lastName",
-    label: "Last Name"
+    name: "phone",
+    label: "Phone Number",
+    asInput: "ReactInputMask",
+    mask: "(999) 999-9999"
   },
+
   {
     name: "taxNo",
     label: "Tax No"
@@ -60,7 +61,8 @@ const UserProfileForm = () => {
     try {
       await services.user.updateUser(values);
     } catch (error) {
-      utils.functions.swalToast("update failed", "error")
+      console.log(error)
+      utils.functions.swalToast(`Profile update failed: ${error.message}`, "error");
     }
     finally {
       setLoading(false);
@@ -74,7 +76,7 @@ const UserProfileForm = () => {
   });
 
   return (
-    <div className="profile-form"> {/* SCSS dosyasındaki stil tanımları bu div içinde geçerli olacak */}
+    <div className="profile-form">
       <Form noValidate onSubmit={formik.handleSubmit}>
         <Row className="justify-content-center ">
           <Col md={6}>
@@ -86,8 +88,10 @@ const UserProfileForm = () => {
             {formInputs.slice(3).map((item) => (
               <CustomForm key={item.name} formik={formik} {...item} />
             ))}
-            <Button type="submit" className="btn-update" disabled={loading}>
-              {loading ? "Updating..." : "UPDATE PROFILE"}
+            <Button type="submit" className="btn-update"
+              disabled={!(formik.dirty && formik.isValid) || loading}>
+              {loading ? <Spinner animation="border" size="sm" /> : "UPDATE PROFILE"}
+
             </Button>
           </Col>
         </Row>

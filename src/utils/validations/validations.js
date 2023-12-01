@@ -76,7 +76,7 @@ export const contactFormValidationSchema = Yup.object({
         .required("Please enter your message"),
 });
 
-
+// USER PROFILE FORM
 export const userProfileFormValidationSchema = Yup.object({
     firstName: Yup.string()
         .min(2, "First name must be at least 2 characters")
@@ -101,4 +101,24 @@ export const userProfileFormValidationSchema = Yup.object({
         .required("Please enter your country"),
     taxNo: Yup.string()
         .required("Please enter your tax no")
+});
+
+// USER PASSWORD FORM
+export const userPasswordFormValidationSchema = Yup.object({
+    email: Yup.string()
+        .email("Invalid email address")
+        .required("Please enter your email address"),
+    oldPassword: Yup.string()
+        .required("Please enter your current password"),
+    newPassword: Yup.string()
+        .min(8, "Password must be at least 8 characters")
+        .max(50, "Password must be at most 50 characters")
+        .matches(/[a-z]+/, "Password must contain at least one lowercase letter")
+        .matches(/[A-Z]+/, "Password must contain at least one uppercase letter")
+        .matches(/\d+/, "Password must contain at least one number")
+        .matches(/[@$!%*#?&.]+/, "Password must contain at least one special character")
+        .required("Please enter your password"),
+    confirmNewPassword: Yup.string()
+        .oneOf([Yup.ref("newPassword"), null], "Passwords fields doesn't match")
+        .required("Please confirm your password")
 });
