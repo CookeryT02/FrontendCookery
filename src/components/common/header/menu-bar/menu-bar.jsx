@@ -68,7 +68,6 @@ const MenuBar = () => {
   }, []);
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
     navigate(`/categories/${category.id}`);
   };
 
@@ -125,12 +124,15 @@ const MenuBar = () => {
 
               {MenuItems.map((item) => (
                 <Dropdown.Item>
-                  <Link to={item.path}>
+                  {loading ? <Loading /> :
+                  categories && categories.map((category, index) => (
+                  <Link to={{ pathname: `/categories/${category.id}`, state: { selectedItem: item } }}>
                     <span>
                       {item.icon}
                     </span>{" "}
                     {item.title}
                   </Link>
+                  ))}
                 </Dropdown.Item>
               ))}
               <Dropdown.Item onClick={handleUserMenuClick} className="p-0 mt-1">
