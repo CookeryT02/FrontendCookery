@@ -1,4 +1,4 @@
-const CustomPagination = () => {
+const CustomPagination = (props) => {
   return (
     <div>CustomPagination</div>
   )

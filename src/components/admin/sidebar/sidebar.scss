@@ -1,0 +1,86 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/mixins.scss" as m;
+
+$breakpoint: 992px;
+$breakpointsm: 450px;
+
+.admin-sidebar {
+    background-color: v.$color2_2 !important;
+
+    @media (min-width: $breakpoint) {
+        align-items: flex-start !important;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    .logo {
+        padding: 3rem 1.5rem 2rem 0;
+
+        @media (max-width: 991px) {
+            padding: 1rem 1.5rem 0.2rem 0;
+        }
+
+
+        img {
+            height: 45px;
+            margin: 0;
+        }
+
+
+    }
+
+}
+
+.adminSidebarContainer {
+    @media (min-width: $breakpoint) {
+        flex-direction: column;
+    }
+}
+
+.navbar-collapse {
+    width: 100%;
+}
+
+
+.adminSidebarNav {
+    width: 100%;
+    padding: 0.3rem 1rem;
+    @include m.flexbox(column);
+
+
+    @media (min-width: $breakpoint) {
+        flex-direction: column !important;
+    }
+
+    .nav-link {
+        color: whitesmoke !important;
+        font-weight: 500;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: x-large;
+        text-shadow: 0px 0px 2px v.$color1_1;
+        line-height: 1.7rem;
+
+
+        @media (max-width: 991px) {
+            line-height: 1rem;
+        }
+
+
+        &:hover {
+            color: v.$color3 !important;
+        }
+
+        &.active {
+            color: v.$color3 !important;
+        }
+    }
+
+
+}
+
+.navbar-toggler {
+    background-color: v.$color2_2;
+    border: none !important;
+}

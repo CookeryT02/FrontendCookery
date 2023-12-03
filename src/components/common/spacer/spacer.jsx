@@ -4,7 +4,7 @@ const Spacer = (props) => {
   const { width, height } = props;
 
   const spacerStyle = {
-    width: width ? width : '100vh',
+    width: width ? width : '100%',
     height: height ? height : '3rem'
   };
 
