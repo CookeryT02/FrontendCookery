@@ -58,8 +58,21 @@ const UserProfileForm = () => {
 
   const onSubmit = async (values) => {
     setLoading(true);
+    const req = {
+
+      firstName: values.firstName,
+      lastName: values.lastName,
+      email: user.email,
+      phone: values.phone,
+      taxNo: values.taxNo,
+      address: values.address,
+      city: values.city,
+      country: values.country,
+      birthDate: user.birthDate,
+
+    };
     try {
-      await services.user.updateUser(values);
+      await services.user.updateUser(req);
     } catch (error) {
       console.log(error)
       utils.functions.swalToast(`Profile update failed: ${error.message}`, "error");

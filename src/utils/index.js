@@ -1,5 +1,5 @@
 //FUNCTIONS
-import { validCheck, swalQuestion, swalToast } from "./functions/functions";
+import { validCheck, swalQuestion, swalToast, formatDateTime } from "./functions/functions";
 
 //INITIAL VALUES
 import {
@@ -23,7 +23,7 @@ import {
 
 
 export const utils = {
-    functions: { validCheck, swalQuestion, swalToast },
+    functions: { validCheck, swalQuestion, swalToast, formatDateTime },
     initialValues: {
         contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
     },

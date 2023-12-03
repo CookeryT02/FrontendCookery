@@ -65,8 +65,8 @@ export const getUserAdmin = async (id) => {
     return response.data;
 };
 
-export const getUsersByPage = async (page = 0, size = 20, sort = "id", direction = "DESC") => {
-    const response = await axios.get(`${API_URL}/user/auth/pages?page=${page}&size=${size}&sort=${sort}&direction=${direction}`, services.authHeader());
+export const getUsersByPage = async (page = 0, size = 20, sort = "createAt", direction = "DESC") => {
+    const response = await axios.get(`${API_URL}/users/admin?q=admin&page=${page}&size=${size}&sort=${sort}&type=${direction}`, services.authHeader());
     return response.data;
 };
 

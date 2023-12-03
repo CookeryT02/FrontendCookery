@@ -1,10 +1,9 @@
-import { PopularProducts } from "../../../components";
-
+import React from 'react'
 
 const CategoriesPage = () => {
   return (
-    <PopularProducts />
+    <div>CategoriesPage</div>
   )
-};
+}
 
-export default CategoriesPage;
+export default CategoriesPage

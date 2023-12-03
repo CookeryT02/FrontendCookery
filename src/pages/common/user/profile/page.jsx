@@ -1,7 +1,8 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { PageHeader, Spacer, UserAvatar, UserOffersTable, UserPasswordForm, UserProfileForm } from "../../../../components";
+import { PageHeader, Spacer, UserAvatar, UserPasswordForm, UserProfileForm } from "../../../../components";
 import { useState } from "react";
 import "./page.scss";
+import UserOffersPage from "../offers/page";
 
 const UserProfilePage = () => {
   const Titles = [
@@ -23,7 +24,7 @@ const UserProfilePage = () => {
       case "Account":
         return <UserPasswordForm />;
       case "MyOffers":
-        return <UserOffersTable />;
+        return <UserOffersPage />;
       default:
         return null;
     }

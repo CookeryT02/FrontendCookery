@@ -1,10 +1,10 @@
 import { deleteMessage, getMessage, getMessagesByPage, sendMessage } from "./contact/contact-service";
 
-import { createReservation, deleteReservation, downloadReservationReports, getReservationById, getReservationByIdAdmin, getReservationsByPage, getReservationsByPageAdmin, isVehicleAvailable, updateReservation } from "./reservation/reservation-service";
+import { getOffersByPage, getTodaysOffersByPage } from "./offer/offer-service";
 
 import { deleteUser, downloadUserReports, getUser, getUserAdmin, getUsersByPage, login, register, updatePassword, updateUser, updateUserAdmin } from "./user/user-service";
 
-import { getFeaturedProducts, getProductsByPage, getAllCategories, getProductsByCategoryId } from "./product/product-service"
+import { getFeaturedProducts, getProductsByPage, getAllCategories, getProductsByCategoryId, getBrandsByPage } from "./product/product-service"
 
 import { encryptedLocalStorage } from "./encrypt-storage/encrypt-storage";
 import { authHeader } from "./auth-header/auth-header";
@@ -18,18 +18,19 @@ export const services = {
         getMessage,
         getMessagesByPage,
     },
-    reservation: {
+    offer: {
         // COMMON ENDPOINTS
-        createReservation,
-        getReservationById,
-        getReservationsByPage,
-        isVehicleAvailable,
+        //createReservation,
+        //getReservationById,
+        getOffersByPage,
+        getTodaysOffersByPage,
+        //isVehicleAvailable,
         // ADMIN ENDPOINTS
-        deleteReservation,
-        downloadReservationReports,
-        getReservationByIdAdmin,
-        getReservationsByPageAdmin,
-        updateReservation,
+        // deleteReservation,
+        //downloadReservationReports,
+        // getReservationByIdAdmin,
+        //getReservationsByPageAdmin,
+        //updateReservation,
     },
     user: {
         // COMMON ENDPOINTS
@@ -53,6 +54,7 @@ export const services = {
         // ADMIN ENDPOINTS
         getAllCategories,
         getProductsByCategoryId,
+        getBrandsByPage,
     },
     encryptedLocalStorage,
     authHeader
