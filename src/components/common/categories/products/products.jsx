@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
-import Loading from '../../loading/loading';
+import React, { useEffect, useState } from 'react';
 import { services } from '../../../../services';
+import { Loading } from '../../../../components';
+import { Link } from 'react-router-dom';
+import { constants } from '../../../../constants';
 import ProductCard from '../../product/product-card/product-card';
 
-const Products = (categoryId) => {
 
+const { routes } = constants;
+
+const Products = ({ categoryId }) => {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
 
@@ -13,7 +16,6 @@ const Products = (categoryId) => {
         try {
             const productsData = await services.product.getProductsByCategoryId(categoryId);
             setProducts(productsData);
-            
         } catch (error) {
             console.log(error);
         } finally {
@@ -25,23 +27,19 @@ const Products = (categoryId) => {
         loadData();
     }, [categoryId]);
 
-
-  return (
-    <div>
-          <Container className="content-container">
-            <Row >
-              {loading ? <Loading /> :
-                products && products.map((product, index) => (
-                  <Col xs={4} lg={2} key={product.id || index}>
-                    <ProductCard {...product} />
-                  </Col>
+    return (
+        <div className="row mt-4">
+            {loading ? <Loading /> : (
+                products.map((product, index) => (
+                    <div key={index} className="col-md-4 col-sm-6">
+                        <Link className="product-title">
+                            <ProductCard {...product} />
+                        </Link>
+                    </div>
                 ))
-              }
-            </Row>
-          </Container>
-          
+            )}
         </div>
-  )
-}
+    );
+};
 
 export default Products;
