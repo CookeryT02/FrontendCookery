@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { PageHeader } from "../../../components";
-import BreadCrumb from "../../../components/common/bread-crumb/breadCrumb";
+import { PageHeader, Product } from "../../../components";
+import BreadCrumb from "../../../components/common/categories/bread-crumb/breadCrumb";
 import { services } from "../../../services";
 import { useParams } from "react-router-dom";
-import MapCategories from "../productsmap/map-categories/map-categories";
+import CategoriesDesc from "../../../components/common/categories/categories-desc/categories-desc";
+import Products from "../../../components/common/categories/products/products";
 import MapProducts from "../productsmap/map-products/map-products";
-import CategoriesDesc from "../../../components/common/categories-desc/categories-desc";
 
 
 const CategoriesPage = () => {
@@ -37,6 +37,8 @@ const CategoriesPage = () => {
         />
        <BreadCrumb categoryId={categoryId} />
        <CategoriesDesc categoryId={categoryId}/>
+       <Products categoryId={categoryId}/> 
+     
      </div>
   )
 };
