@@ -20,7 +20,7 @@ const AdminDashboard = () => {
     try {
       const userData = await services.user.getUsersByPage();
       setUsers(userData?.totalElements);
-      const brandsData = await services.product.getBrandsByPage();
+      const brandsData = await services.brand.getBrandsByPage();
       setBrands(brandsData?.totalElements)
       const productsData = await services.product.getProductsByPage();
       setProducts(productsData?.totalElements)

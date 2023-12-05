@@ -4,11 +4,12 @@ import { getOffersByPage, getTodaysOffersByPage } from "./offer/offer-service";
 
 import { deleteUser, downloadUserReports, getUser, getUserAdmin, getUsersByPage, login, register, updatePassword, updateUser, updateUserAdmin } from "./user/user-service";
 
-import { getFeaturedProducts, getProductsByPage, getProductsByCategoryId, getBrandsByPage } from "./product/product-service"
+import { getFeaturedProducts, getProductsByPage, getProductsByCategoryId, } from "./product/product-service"
 
 import { encryptedLocalStorage } from "./encrypt-storage/encrypt-storage";
 import { authHeader } from "./auth-header/auth-header";
 import { getOneCategory, getAllCategories, } from "./category/category-service"
+import { getBrandsByPage } from "./brand/brand"
 
 export const services = {
     contact: {
@@ -60,6 +61,9 @@ export const services = {
     categories: {
         getOneCategory,
         getAllCategories,
+    },
+    brand: {
+        getBrandsByPage,
     },
     encryptedLocalStorage,
     authHeader

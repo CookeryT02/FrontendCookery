@@ -15,12 +15,6 @@ export const getProductsByPage = async (page = 0, size = 6, sort = "category", d
     return response.data;
 };
 
-export const getBrandsByPage = async (page = 0, size = 6, sort = "name", direction = "ASC") => {
-    const response = await axios.get(`${API_URL}/brands?page=${page}&size=${size}&sort=${sort}&type=${direction}`, services.authHeader());
-    return response.data;
-};
-
-
 export const getProductsByCategoryId = async (id) => {
     const response = await axios.get(`${API_URL}/categories/${id}/products`, services.authHeader());
     return response.data;
