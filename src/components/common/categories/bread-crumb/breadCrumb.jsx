@@ -24,7 +24,7 @@ const BreadCrumb = ({categoryId}) => {
 
 
   return (
-    <div>
+    <div style={{boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", marginTop:"1rem", borderRadius: "8px"}}>
         <Link to="/">Home</Link>
         {categoryId && <span> / {categoryName}</span>}
     </div>

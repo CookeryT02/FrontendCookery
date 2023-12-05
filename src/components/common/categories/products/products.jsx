@@ -31,7 +31,7 @@ const Products = ({ categoryId }) => {
         <div className="row mt-4">
             {loading ? <Loading /> : (
                 products.map((product, index) => (
-                    <div key={index} className="col-md-4 col-sm-6">
+                    <div key={index} className="col-md-4 col-sm-6 col-xl-3">
                         <Link className="product-title">
                             <ProductCard {...product} />
                         </Link>

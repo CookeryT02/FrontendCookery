@@ -39,9 +39,14 @@ const CategoriesDesc = ({ categoryId }) => {
                 {categoryId && <span>{categoryName}</span>}
             </h5>
             <p>{categoryId && categoryDesc}</p>
-            <div style={{ border: "1px solid grey", borderRadius:"0.2rem" }}>
-                <PiDotsNineBold className='me-3' style={{fontSize:"1.5rem"}}/>
-                <PiDotsSixBold style={{fontSize:"1.5rem"}} />
+            <div style={{ 
+                border: "1px solid rgba(0, 0, 0, 0.2)", 
+                borderRadius: "8px", 
+                boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", 
+                  
+                }}>
+                <PiDotsNineBold className='me-3' style={{fontSize:"1.2rem", color:"grey"}}/>
+                <PiDotsSixBold style={{fontSize:"1.3rem", color:"grey"}} />
             </div>
  
         
