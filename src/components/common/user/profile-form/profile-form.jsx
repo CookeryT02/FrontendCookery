@@ -71,19 +71,6 @@ const UserProfileForm = () => {
       birthDate: user.birthDate,
 
     };
-    const req = {
-
-      firstName: values.firstName,
-      lastName: values.lastName,
-      email: user.email,
-      phone: values.phone,
-      taxNo: values.taxNo,
-      address: values.address,
-      city: values.city,
-      country: values.country,
-      birthDate: user.birthDate,
-
-    };
     try {
       await services.user.updateUser(req);
       utils.functions.swalToast(`Profile updated`, "success");

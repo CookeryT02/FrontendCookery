@@ -61,7 +61,7 @@ const router = createBrowserRouter([
                 element: <RegisterPage />
             },
             {
-                path: "categories",
+                path: "categories/:id",
                 element: <CategoriesPage />
             },
             {
@@ -187,7 +187,7 @@ const router = createBrowserRouter([
                 element: <AdminUsersPage />
             },
             {
-                path: "users/:id",
+                path: ":id/users",
                 element: <AdminUserEditPage />
             },
             {

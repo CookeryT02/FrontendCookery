@@ -6,7 +6,7 @@ import { PiSquaresFourDuotone } from "react-icons/pi";
 import { SlEarphones } from "react-icons/sl";
 import { constants } from "../../../../constants";
 import UserMenu from "./userMenu/userMenu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -50,6 +50,8 @@ const MenuBar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
+  const navigate = useNavigate();
+
   const loadData = async () => {
     try {
       const categoriesData = await services.product.getAllCategories();
@@ -68,12 +70,16 @@ const MenuBar = () => {
   }, []);
 
   const handleCategoryClick = (category) => {
+    navigate(`/categories/${category.id}`);
     setSelectedCategory(category);
+    setDropdownOpen(false);
   };
 
   const handleUserMenuClick = (e) => {
     e.stopPropagation();
   };
+
+
   return (
     <div className="bar-menu">
       <Navbar collapseOnSelect expand="lg" className="navbar p-0">

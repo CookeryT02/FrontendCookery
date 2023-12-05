@@ -9,6 +9,7 @@ import {
 
 
 //TABLES
+import { adminUserColumns } from "./tables/tables";
 
 
 
@@ -27,7 +28,7 @@ export const utils = {
     initialValues: {
         contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
     },
-    tables: {},
+    tables: { adminUserColumns },
     validations: {
         contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema,
         userProfileFormValidationSchema, userPasswordFormValidationSchema
