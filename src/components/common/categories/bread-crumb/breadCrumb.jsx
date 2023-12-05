@@ -10,7 +10,7 @@ const BreadCrumb = ({categoryId}) => {
     useEffect(()=> {
         const getCategoryName = async () => {
             try {
-                const category = await services.category.getOneCategory(categoryId);
+                const category = await services.categories.getOneCategory(categoryId);
                 setCategoryName(category.title);
             } catch (error) {
                 console.log(error);

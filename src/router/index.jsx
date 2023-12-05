@@ -187,7 +187,7 @@ const router = createBrowserRouter([
                 element: <AdminUsersPage />
             },
             {
-                path: "users/:id",
+                path: ":id/users",
                 element: <AdminUserEditPage />
             },
             {

@@ -11,7 +11,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 
 
 const {
-    routes: { login, userProfile, userReservations, adminDashboard },
+    routes: { login, userProfile, adminDashboard },
 } = constants;
 
 const UserMenu = () => {
@@ -25,7 +25,6 @@ const UserMenu = () => {
             .then((response) => {
                 if (response.isConfirmed) {
                     dispatch(logout());
-
                 }
             })
     }
@@ -38,12 +37,18 @@ const UserMenu = () => {
                         {user?.firstName || "Guest"} <IoMdArrowDropdown />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item as={Link} onClick={handleLogout}>
-                            Logout
-                        </Dropdown.Item>
                         <Dropdown.Item as={Link} to={userProfile}>
                             Profile
                         </Dropdown.Item>
+                        {user?.roles?.includes("Administrator") && (
+                            <Dropdown.Item as={Link} to={adminDashboard}>
+                                Admin Panel
+                            </Dropdown.Item>
+                        )}
+                        <Dropdown.Item as={Link} onClick={handleLogout}>
+                            Logout
+                        </Dropdown.Item>
+
                     </Dropdown.Menu>
                 </Dropdown>
             ) : (

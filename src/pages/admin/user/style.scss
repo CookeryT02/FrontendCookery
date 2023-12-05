@@ -1,0 +1,46 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/mixins.scss" as m;
+
+
+.rdt_TableBody {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    .rdt_TableRow {
+        //font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+
+        @media (max-width: 992px) {
+            font-size: 1rem;
+        }
+    }
+
+}
+
+.input-group {
+
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+
+
+    .form-control {
+        background-color: red;
+        border-radius: 2px;
+        border: none !important;
+        line-height: 1.5rem;
+        color: v.$color1;
+
+    }
+
+
+    .btn {
+        border: none;
+        background-color: v.$color2 !important;
+        color: v.$color1 !important;
+        border-radius: 0;
+        padding: 5px;
+    }
+
+}

@@ -1,13 +1,14 @@
 import { deleteMessage, getMessage, getMessagesByPage, sendMessage } from "./contact/contact-service";
 
-import { getOneCategory } from './category/category-service'
+import { getOffersByPage, getTodaysOffersByPage } from "./offer/offer-service";
 
 import { deleteUser, downloadUserReports, getUser, getUserAdmin, getUsersByPage, login, register, updatePassword, updateUser, updateUserAdmin } from "./user/user-service";
 
-import { getFeaturedProducts, getProductsByPage, getAllCategories, getProductsByCategoryId } from "./product/product-service"
+import { getFeaturedProducts, getProductsByPage, getProductsByCategoryId, getBrandsByPage } from "./product/product-service"
 
 import { encryptedLocalStorage } from "./encrypt-storage/encrypt-storage";
 import { authHeader } from "./auth-header/auth-header";
+import { getOneCategory, getAllCategories, } from "./category/category-service"
 
 export const services = {
     contact: {
@@ -18,7 +19,20 @@ export const services = {
         getMessage,
         getMessagesByPage,
     },
-
+    offer: {
+        // COMMON ENDPOINTS
+        //createReservation,
+        //getReservationById,
+        getOffersByPage,
+        getTodaysOffersByPage,
+        //isVehicleAvailable,
+        // ADMIN ENDPOINTS
+        // deleteReservation,
+        //downloadReservationReports,
+        // getReservationByIdAdmin,
+        //getReservationsByPageAdmin,
+        //updateReservation,
+    },
     user: {
         // COMMON ENDPOINTS
         login,
@@ -39,14 +53,13 @@ export const services = {
         getFeaturedProducts,
         getProductsByPage,
         // ADMIN ENDPOINTS
-        getAllCategories,
-        getProductsByCategoryId,
-    },
-    category: {
-        //COMMON ENDPOINTS
 
-        //ADMIN ENDPOINTS
+        getProductsByCategoryId,
+        getBrandsByPage,
+    },
+    categories: {
         getOneCategory,
+        getAllCategories,
     },
     encryptedLocalStorage,
     authHeader

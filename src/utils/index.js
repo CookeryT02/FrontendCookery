@@ -1,5 +1,5 @@
 //FUNCTIONS
-import { validCheck, swalQuestion, swalToast } from "./functions/functions";
+import { validCheck, swalQuestion, swalToast, formatDateTime } from "./functions/functions";
 
 //INITIAL VALUES
 import {
@@ -9,6 +9,7 @@ import {
 
 
 //TABLES
+import { adminUserColumns } from "./tables/tables";
 
 
 
@@ -16,16 +17,20 @@ import {
 
 
 import {
-    contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema
+    contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema,
+    userProfileFormValidationSchema, userPasswordFormValidationSchema
 } from "./validations/validations"
 
 
 
 export const utils = {
-    functions: { validCheck, swalQuestion, swalToast },
+    functions: { validCheck, swalQuestion, swalToast, formatDateTime },
     initialValues: {
         contactFormInitialValues, loginFormInitialValues, registerFormInitialValues
     },
-    tables: {},
-    validations: { contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema },
+    tables: { adminUserColumns },
+    validations: {
+        contactFormValidationSchema, loginFormValidationSchema, registerFormValidationSchema,
+        userProfileFormValidationSchema, userPasswordFormValidationSchema
+    },
 }

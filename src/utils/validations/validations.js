@@ -75,3 +75,50 @@ export const contactFormValidationSchema = Yup.object({
         .max(200, "Message must be at most 200 characters")
         .required("Please enter your message"),
 });
+
+// USER PROFILE FORM
+export const userProfileFormValidationSchema = Yup.object({
+    firstName: Yup.string()
+        .min(2, "First name must be at least 2 characters")
+        .max(50, "First name must be at most 50 characters")
+        .required("Please enter your first name"),
+    lastName: Yup.string()
+        .min(2, "Last name must be at least 2 characters")
+        .max(50, "Last name must be at most 50 characters")
+        .required("Please enter your last name"),
+    phone: Yup.string()
+        .matches(/^[\d\s()/-]+$/, "There are invalid characters in your phone number")
+        .min(14, "Phone number must be at least 10 digits")
+        .max(14, "Phone number must be at most 10 digits")
+        .required("Please enter your phone number"),
+    address: Yup.string()
+        .min(5, "Address mustW be at least 5 characters")
+        .max(50, "Address must be at most 50 characters")
+        .required("Please enter your address"),
+    city: Yup.string()
+        .required("Please enter your city"),
+    country: Yup.string()
+        .required("Please enter your country"),
+    taxNo: Yup.string()
+        .required("Please enter your tax no")
+});
+
+// USER PASSWORD FORM
+export const userPasswordFormValidationSchema = Yup.object({
+    email: Yup.string()
+        .email("Invalid email address")
+        .required("Please enter your email address"),
+    oldPassword: Yup.string()
+        .required("Please enter your current password"),
+    newPassword: Yup.string()
+        .min(8, "Password must be at least 8 characters")
+        .max(50, "Password must be at most 50 characters")
+        .matches(/[a-z]+/, "Password must contain at least one lowercase letter")
+        .matches(/[A-Z]+/, "Password must contain at least one uppercase letter")
+        .matches(/\d+/, "Password must contain at least one number")
+        .matches(/[@$!%*#?&.]+/, "Password must contain at least one special character")
+        .required("Please enter your password"),
+    confirmNewPassword: Yup.string()
+        .oneOf([Yup.ref("newPassword"), null], "Passwords fields doesn't match")
+        .required("Please confirm your password")
+});

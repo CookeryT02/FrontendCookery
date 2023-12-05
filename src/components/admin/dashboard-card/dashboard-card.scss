@@ -1,0 +1,92 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/mixins" as m;
+
+.dashboard-card {
+
+    cursor: pointer;
+    background-color: v.$color1_2;
+    padding-top: 1rem;
+    padding-bottom: 1.3rem;
+    position: relative;
+    margin-bottom: 1.3rem;
+
+    @include m.flexbox(row);
+
+    .icon {
+        background-color: v.$color1_2;
+        position: absolute;
+        width: 100%;
+        margin-top: 0.5rem;
+
+        svg {
+            font-size: 5.8rem;
+            color: v.$color1_1;
+            opacity: 0.35;
+            margin-left: 40%;
+
+            @media (min-width: 1200px) {
+                margin-left: 50%;
+            }
+
+            @media (min-width: 1500px) {
+                margin-left: 60%;
+            }
+        }
+    }
+
+    .content {
+        text-align: left;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        line-height: normal;
+        padding-left: 16%;
+
+
+        .title {
+            color: v.$color1;
+            background-color: v.$color1_2;
+
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+                margin-top: 0.8rem;
+                white-space: nowrap;
+                padding-left: 1.3rem;
+
+                span {
+                    position: relative;
+                    z-index: 2;
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        width: 17px;
+                        height: 17px;
+                        border: 4px solid rgb(209, 0, 0);
+                        position: absolute;
+                        left: -21px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+
+        .item {
+            color: v.$color1;
+            background-color: v.$color1_2;
+
+            p {
+                margin: 0;
+                font-size: 3rem;
+                color: v.$color1;
+                background-color: v.$color1_2;
+                z-index: 1;
+            }
+
+            span {
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+}

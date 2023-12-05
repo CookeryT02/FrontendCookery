@@ -27,6 +27,12 @@
 
         a {
             margin-left: 0;
+
+            &:active,
+            &:focus {
+                background-color: v.$color2_1 !important;
+                color: v.$color1 !important;
+            }
         }
     }
 

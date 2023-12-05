@@ -71,9 +71,13 @@ const portfolio = [
 const routes = {
     // ADMIN ROUTES
     adminDashboard: "/admin",
+    adminProducts: "/admin/products",
+    adminCategories: "/admin/categories",
+    adminBrands: "/admin/brands",
     adminOffers: "/admin/offers",
     adminUsers: "/admin/users",
-    adminVehicles: "/admin/vehicles",
+    adminReports: "/admin/reports",
+
 
     // COMMON ROUTES
     about: "/about",

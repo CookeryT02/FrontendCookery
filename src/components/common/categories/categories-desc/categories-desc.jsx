@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux';  // `useSelector` hook'unu içe aktar
 import { services } from '../../../../services';
 import { PiDotsNineBold, PiDotsSixBold } from "react-icons/pi";
 import Loading from '../../loading/loading';
-import { Container, Row } from 'react-bootstrap';
-import ProductCard from '../../product/product-card/product-card';
+
 
 const CategoriesDesc = ({ categoryId }) => {
     const { user, isLoggedIn } = useSelector((state) => state.auth);
@@ -16,9 +15,11 @@ const CategoriesDesc = ({ categoryId }) => {
 
     const getCategoryName = async () => {
         try {
-            const category = await services.category.getOneCategory(categoryId);
+            const category = await services.categories.getOneCategory(categoryId);
+            console.log(category);
             setCategoryName(category.title);
             setCategoryDesc(category.description);
+            console.log(category.description)
             
         } catch (error) {
             console.log(error);

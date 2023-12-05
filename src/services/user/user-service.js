@@ -29,17 +29,21 @@ export const getUser = async () => {
     return response.data;
 };
 export const updatePassword = async (dto) => {
-    const response = await axios.patch(`${API_URL}/user/auth`, dto, services.authHeader());
+    console.log(dto)
+    const response = await axios.patch(`${API_URL}/users/auth`, dto, services.authHeader());
+    console.log(response)
     return response.data;
 };
 export const updateUser = async (userInfo) => {
-    const response = await axios.put(`${API_URL}/user`, userInfo, services.authHeader());
+    console.log(userInfo)
+    const response = await axios.put(`${API_URL}/users/auth`, userInfo, services.authHeader());
+    console.log(response)
     return response.data;
 };
 
 // ADMIN ENDPOINTS
 export const deleteUser = async (id) => {
-    const response = axios.delete(`${API_URL}/user/${id}/auth`, services.authHeader());
+    const response = axios.delete(`${API_URL}/users/${id}/auth`, services.authHeader());
     return response.data;
 };
 
@@ -61,8 +65,8 @@ export const getUserAdmin = async (id) => {
     return response.data;
 };
 
-export const getUsersByPage = async (page = 0, size = 20, sort = "id", direction = "DESC") => {
-    const response = await axios.get(`${API_URL}/user/auth/pages?page=${page}&size=${size}&sort=${sort}&direction=${direction}`, services.authHeader());
+export const getUsersByPage = async (page = 0, size = 20, sort = "createAt", direction = "DESC") => {
+    const response = await axios.get(`${API_URL}/users/admin?q=admin&page=${page}&size=${size}&sort=${sort}&type=${direction}`, services.authHeader());
     return response.data;
 };
 

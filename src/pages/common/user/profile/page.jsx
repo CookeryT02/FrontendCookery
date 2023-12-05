@@ -1,58 +1,61 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { PageHeader, Spacer, UserAvatar, UserPasswordForm, UserProfileForm } from "../../../../components";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import "./page.scss";
+import UserOffersPage from "../offers/page";
 
 const UserProfilePage = () => {
-
-  const [selectedTitle, setSelectedTitle] = useState(null);
-
-  const Tittles = [
-    {
-      name: "Profile",
-
-    },
-    {
-      name: "Account",
-    },
+  const Titles = [
+    { name: "Profile" },
+    { name: "Account" },
     { name: "MyOffers" }
-  ]
+  ];
+
+  const [selectedTitle, setSelectedTitle] = useState(Titles[0]);
 
   const handleTitleClick = (title) => {
     setSelectedTitle(title);
   };
 
+  const renderContentBasedOnTitle = () => {
+    switch (selectedTitle.name) {
+      case "Profile":
+        return <UserProfileForm />;
+      case "Account":
+        return <UserPasswordForm />;
+      case "MyOffers":
+        return <UserOffersPage />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
-      <PageHeader
-        title="PROFILE"
-      />
+      <PageHeader title="PROFILE" />
       <Spacer />
       <Container>
         <Row className="justify-content-center gap-5">
-          <Col lg={2} className="text-center">
+          <Col md={3} className="text-center">
             <UserAvatar />
-            {Tittles.map((title, index) => (
+            {Titles.map((title, index) => (
               <Button
-                className={`w-100 mb-3 category-button ${selectedTitle === title ? 'active' : ''
-                  }`}
+                key={index}
+                className={`w-100 mb-3 user-button ${selectedTitle.name === title.name ? 'active' : ''}`}
                 onClick={() => handleTitleClick(title)}
               >
                 {title.name}
               </Button>
             ))}
           </Col>
-          <Col lg={4}>
-            <UserProfileForm />
-          </Col>
-          <Col lg={4}>
-            <UserPasswordForm />
+          <Col md={8} >
+            {renderContentBasedOnTitle()}
           </Col>
         </Row>
-
       </Container>
-      <Spacer />
+      <Spacer height={"5rem"} />
     </>
-  )
+  );
 };
 
 export default UserProfilePage;

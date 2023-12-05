@@ -5,7 +5,6 @@ import { services } from "../../../services";
 import { useParams } from "react-router-dom";
 import CategoriesDesc from "../../../components/common/categories/categories-desc/categories-desc";
 import Products from "../../../components/common/categories/products/products";
-import MapProducts from "../productsmap/map-products/map-products";
 import { Col, Container, Row } from "react-bootstrap";
 
 
@@ -49,6 +48,6 @@ const CategoriesPage = () => {
      </Container>
      </>
   )
-};
+}
 
-export default CategoriesPage;
+export default CategoriesPage

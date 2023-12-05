@@ -1,7 +1,7 @@
 import axios from "axios";
-import { services } from "../";
+import { services } from "..";
 
-const API_URL = import.meta.env.VITE_APP_API_URL;
+const API_URL = "https://order-management-backend-v4-ae27edbd92c7.herokuapp.com";
 
 // COMMON ENDPOINTS
 export const createReservation = async (carId, dto) => {
@@ -14,8 +14,21 @@ export const getReservationById = async (id) => {
     return response.data;
 };
 
-export const getReservationsByPage = async (page = 0, size = 20, sort = "pickUpTime", direction = "DESC") => {
-    const response = await axios.get(`${API_URL}/reservations/auth/all?page=${page}&size=${size}&sort=${sort}&direction=${direction}`, services.authHeader());
+export const getOffersByPage = async (status = 0, startingDate = "2023-01-01T00:00:00", endingDate = new Date().toISOString().slice(0, 19), page = 0, size = 20, sort = "createAt", direction = "DESC") => {
+    const response = await axios.get(
+        `${API_URL}/offers/admin?q=&status=${status}&startingDate=${startingDate}&endingDate=${endingDate}&page=${page}&size=${size}&sort=${sort}&type=${direction}`,
+        services.authHeader(),
+    );
+    return response.data;
+};
+
+export const getTodaysOffersByPage = async (status = 0, startingDate = new Date().toISOString().slice(0, 10) + "T00:00:00", endingDate = new Date().toISOString().slice(0, 19), page = 0, size = 20, sort = "createAt", direction = "DESC") => {
+    const response = await axios.get(
+        `${API_URL}/offers/admin?q=&status=${status}&startingDate=${startingDate}&endingDate=${endingDate}&page=${page}&size=${size}&sort=${sort}&type=${direction}`,
+        services.authHeader(),
+    );
+    console.log(startingDate)
+    console.log(endingDate)
     return response.data;
 };
 

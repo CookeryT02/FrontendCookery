@@ -14,7 +14,7 @@ const MapCategories = () => {
 
     const loadData = async () => {
         try {
-            const categoriesData = await services.product.getAllCategories();
+            const categoriesData = await services.categories.getAllCategories();
             setCategories(categoriesData);
             setSelectedCategory(categoriesData.length > 0 ? categoriesData[0] : null);
         } catch (error) {

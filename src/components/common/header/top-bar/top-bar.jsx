@@ -33,7 +33,7 @@ const TopBar = () => {
             >
             </Form.Control>
 
-            <Button disabled={!searchText} onClick={handleSearch}><BiSearchAlt2 /></Button>
+            <Button disabled={!searchText} onClick={handleSearch}><BiSearchAlt2 size={24} /></Button>
 
           </InputGroup>
 

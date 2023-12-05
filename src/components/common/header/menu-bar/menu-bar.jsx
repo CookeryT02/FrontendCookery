@@ -48,11 +48,13 @@ const MenuBar = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
   const navigate = useNavigate();
 
   const loadData = async () => {
     try {
-      const categoriesData = await services.product.getAllCategories();
+      const categoriesData = await services.categories.getAllCategories();
       setCategories(categoriesData);
       setSelectedCategory(categoriesData.length > 0 ? categoriesData[0] : null);
     } catch (error) {
@@ -69,11 +71,15 @@ const MenuBar = () => {
 
   const handleCategoryClick = (category) => {
     navigate(`/categories/${category.id}`);
+    setSelectedCategory(category);
+    setDropdownOpen(false);
   };
 
   const handleUserMenuClick = (e) => {
     e.stopPropagation();
   };
+
+
   return (
     <div className="bar-menu">
       <Navbar collapseOnSelect expand="lg" className="navbar p-0">
