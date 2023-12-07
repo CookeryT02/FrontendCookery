@@ -31,7 +31,7 @@ const AdminUsersPage = () => {
 
   const loadData = async (page) => {
     try {
-      const data = await services.user.getUsersByPage(page - 1, perPage);
+      const data = await services.user.getUsersByPage(page, perPage);
       setUserData(data.content);
       setTotalRows(data.totalElements);
     } catch (error) {

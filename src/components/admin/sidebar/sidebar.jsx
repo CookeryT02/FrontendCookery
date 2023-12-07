@@ -76,7 +76,7 @@ const Sidebar = () => {
                 active={
                   item.title === "Dashboard"
                     ? pathname === item.pathname
-                    : pathname.startsWith(item.pathname)
+                    : pathname.endsWith(item.pathname.split("/").pop())
                 }>
                 {item.title}
               </Nav.Link>

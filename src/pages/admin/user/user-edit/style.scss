@@ -1,0 +1,51 @@
+@use "../../../../styles/variables" as v;
+@use "../../../../styles/mixins.scss" as m;
+
+.form-label {
+    margin-bottom: 0.3rem !important;
+}
+
+.form-check {
+
+
+    .form-check-input {
+        background-color: v.$color1_1 !important;
+        opacity: 0.7;
+
+    }
+
+    .form-check-label {
+        font-size: small;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: v.$color1 !important;
+
+    }
+}
+
+.btnRow {
+    margin-top: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    .btnDelete {
+        border-radius: 2px;
+        margin-right: 1rem;
+        width: 25%;
+        max-width: 300px;
+        border: none;
+        font-size: larger;
+    }
+
+    .btnSave {
+        background-color: v.$color2_2;
+        border-radius: 2px;
+        margin-right: 1rem;
+        width: 25%;
+        max-width: 300px;
+        border: none;
+        font-size: larger;
+
+        &:disabled {
+            background-color: v.$color2_2;
+        }
+    }
+}

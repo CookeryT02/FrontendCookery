@@ -128,21 +128,18 @@ const MenuBar = () => {
             </DropdownToggle>
             <Dropdown.Menu>
 
-              {MenuItems.map((item) => (
-                <Dropdown.Item>
-                  {loading ? <Loading /> :
-                  categories && categories.map((category, index) => (
-                  <Link to={{ pathname: `/categories/${category.id}`, state: { selectedItem: item } }}>
+              <Nav className="gap-2">
+                {MenuItems.map((item) => (
+                  <Link to={item.path}>
                     <span>
                       {item.icon}
                     </span>{" "}
                     {item.title}
                   </Link>
-                  ))}
-                </Dropdown.Item>
-              ))}
-              <Dropdown.Item onClick={handleUserMenuClick} className="p-0 mt-1">
-                <UserMenu />
+                ))}
+              </Nav>
+              <Dropdown.Item onClick={handleUserMenuClick} className="p-0 mt-2 mb-1">
+                <UserMenu className="user-menu" />
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

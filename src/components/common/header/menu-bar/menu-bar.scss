@@ -91,10 +91,34 @@ a {
 .sm-menu {
   display: none;
 
+  .dropdown-menu {
+    border-radius: 1px !important;
+    margin-top: 5px !important;
+    border: none !important;
+    padding: 1rem 0 0 0 !important;
+    background-color: v.$color1_2 !important;
+
+    a {
+      padding: 0.3rem 0 0.3rem 1rem;
+
+      &:hover {
+        background-color: darkgray !important;
+      }
+    }
+
+    .dropdown-item {
+      margin-left: 1rem;
+      width: 90% !important;
+    }
+  }
+
+
   .btn {
     background-color: v.$color2 !important;
     border: none;
     color: v.$color1 !important;
+
+
 
     &:hover,
     &:active,
@@ -129,18 +153,6 @@ a {
 
   .sm-menu {
     display: block;
-
-    .dropdown-menu {
-      border-radius: 1px !important;
-      margin-top: 5px !important;
-      border: none !important;
-      padding: 5px 10px !important;
-      width: 100%;
-      min-height: 2rem;
-      background-color: v.$color1_2 !important;
-
-
-    }
 
   }
 
